@@ -26,5 +26,11 @@ namespace Morning_wakeup_app
         {
             this.InitializeComponent();
         }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Root myWeather = await Current_weather.GetWeatherInformations();
+            weather_textblock.Text = myWeather.name + " - " + myWeather.main.temp + " - " + myWeather.weather[0].description;
+        }
     }
 }
