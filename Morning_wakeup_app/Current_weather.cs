@@ -16,7 +16,7 @@ namespace Morning_wakeup_app
         public async static Task<Root> GetWeatherInformations ()
         {
             var http = new HttpClient();
-            var response = await http.GetAsync("https://api.openweathermap.org/data/2.5/weather?id=3054638&appid=fddc3f024e2f2d470a0582adfc97d810");
+            var response = await http.GetAsync("https://api.openweathermap.org/data/2.5/weather?id=3054638&appid=fddc3f024e2f2d470a0582adfc97d810&units=metric");
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(Root));
 
