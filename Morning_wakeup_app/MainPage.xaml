@@ -9,11 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Get current weather informations" Margin="57,55,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="weather_button" Content="Get current weather informations" Margin="57,55,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="72,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
         <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="501,55,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="news_button" Content="Get the news" Margin="72,467,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
         <TextBlock x:Name="news_tb" HorizontalAlignment="Left" Margin="72,505,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="318" Width="639"/>
+        <TextBlock x:Name="time_tb" HorizontalAlignment="Left" Margin="1318,40,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="139"/>
 
     </Grid>
 </Page>
