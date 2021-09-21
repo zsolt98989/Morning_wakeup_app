@@ -41,7 +41,7 @@ namespace Morning_wakeup_app
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
             List<Article> articles = await News.GetArticlesMain();
-            news_tb.Text = articles.First().title;
+            news_tb.Text = articles.First().title + "\n" + articles.First().author + "\n" + articles.First().description;
         }
     }
 }
