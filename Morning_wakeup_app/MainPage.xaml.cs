@@ -57,9 +57,12 @@ namespace Morning_wakeup_app
 
         private void next_news_button_Click(object sender, RoutedEventArgs e)
         {
-            //var flag = await News.GetArticlesMain();
-            News.current_news_index += 1;
-            news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
+            if (News.news_articles != null)
+            {
+                News.current_news_index += 1;
+                news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
+            }
+                
 
 
         }
@@ -67,8 +70,13 @@ namespace Morning_wakeup_app
         private void prev_news_button_Click(object sender, RoutedEventArgs e)
         {
             //var flag = await News.GetArticlesMain();
-            News.current_news_index += 1;
-            news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
+            if (News.news_articles != null)
+            {
+                if (News.current_news_index > 0)
+                    News.current_news_index -= 1;
+                news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
+            }
+            
         }
     }
 }
