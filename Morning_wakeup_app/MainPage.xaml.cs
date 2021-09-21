@@ -24,12 +24,17 @@ namespace Morning_wakeup_app
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        DispatcherTimer Second_timer = new DispatcherTimer();
         public MainPage()
         {
             this.InitializeComponent();
+
+            Second_timer.Tick += Second_timer_Tick;
+            Second_timer.Interval = new TimeSpan(0, 0, 1);
+            Second_timer.Start();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
             Root myWeather = await Current_weather.GetWeatherInformations();
             string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", myWeather.weather[0].icon);
@@ -41,7 +46,12 @@ namespace Morning_wakeup_app
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
             List<Article> articles = await News.GetArticlesMain();
-            news_tb.Text = articles.First().title;
+            news_tb.Text = articles.First().title + "\n" + articles.First().author + "\n" + articles.First().description;
+        }
+
+        private void Second_timer_Tick(object sender, object e)
+        {
+            time_tb.Text = DateTime.Now.ToString("h:mm:ss tt");
         }
     }
 }
