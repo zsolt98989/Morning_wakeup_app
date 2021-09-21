@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -13,17 +15,18 @@ namespace Morning_wakeup_app
 {
     class Current_weather
     {
-        public async static Task<Root> GetWeatherInformations ()
+        public static Root weather_reports;
+        public async static Task<bool> GetWeatherInformations ()
         {
             var http = new HttpClient();
             var response = await http.GetAsync("https://api.openweathermap.org/data/2.5/weather?id=3054638&appid=fddc3f024e2f2d470a0582adfc97d810&units=metric");
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(Root));
-
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(result));
-            var data = (Root)serializer.ReadObject(ms);
+            var data = JsonConvert.DeserializeObject<Root>(result);
 
-            return data;
+            weather_reports = (Root)serializer.ReadObject(ms);
+            return true; //Todo: hibavizsgálat visszatérésnél, nem csak simán true-t visszaadni
         }
     }
 
