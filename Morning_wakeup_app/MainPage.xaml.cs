@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using static Morning_wakeup_app.News;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -35,6 +36,12 @@ namespace Morning_wakeup_app
             Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
 
             weather_textblock.Text = myWeather.name + "\n" + myWeather.main.temp + " C " + "\n" +  myWeather.main.feels_like + " C" + "\n" + myWeather.main.humidity + " %" +"\n" + myWeather.main.pressure + " Pa" + "\n" + myWeather.weather[0].description;
+        }
+
+        private async void news_button_Click(object sender, RoutedEventArgs e)
+        {
+            List<Article> articles = await News.GetArticlesMain();
+            news_tb.Text = articles.First().title;
         }
     }
 }
