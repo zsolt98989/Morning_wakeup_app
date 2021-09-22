@@ -57,9 +57,11 @@ namespace Morning_wakeup_app
 
         private void next_news_button_Click(object sender, RoutedEventArgs e)
         {
+            int length = News.news_articles.Count();
             if (News.news_articles != null)
             {
-                News.current_news_index += 1;
+                if (News.current_news_index+1 != length)
+                    News.current_news_index += 1;
                 news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
             }
                 
@@ -77,6 +79,11 @@ namespace Morning_wakeup_app
                 news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
             }
             
+        }
+
+        private void news_search_input_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            News.search_by = news_search_input_tb.Text;
         }
     }
 }

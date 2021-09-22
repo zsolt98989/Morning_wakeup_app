@@ -17,6 +17,7 @@
         <TextBlock x:Name="time_tb" HorizontalAlignment="Left" Margin="1318,40,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="139"/>
         <Button x:Name="next_news_button" Content="Next news" Margin="465,467,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
         <Button x:Name="prev_news_button" Content="Previous news" Margin="329,467,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
+        <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="72,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
 
     </Grid>
 </Page>
