@@ -85,5 +85,10 @@ namespace Morning_wakeup_app
         {
             News.search_by = news_search_input_tb.Text;
         }
+
+        private void weather_search_input_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Current_weather.search_by = weather_search_input_tb.Text;
+        }
     }
 }

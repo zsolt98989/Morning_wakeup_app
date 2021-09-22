@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="weather_button" Content="Get current weather informations" Margin="57,55,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
+        <Button x:Name="weather_button" Content="Get current weather informations" Margin="72,105,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
         <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="72,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
         <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="501,55,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="news_button" Content="Get the news" Margin="72,467,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
@@ -18,6 +18,7 @@
         <Button x:Name="next_news_button" Content="Next news" Margin="465,467,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
         <Button x:Name="prev_news_button" Content="Previous news" Margin="329,467,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
         <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="72,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
+        <TextBox x:Name="weather_search_input_tb" HorizontalAlignment="Left" Margin="72,68,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
 
     </Grid>
 </Page>
