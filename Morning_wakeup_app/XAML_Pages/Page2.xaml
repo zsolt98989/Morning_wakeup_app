@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="Morning_wakeup_app.XAML_Pages.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Morning_wakeup_app.XAML_Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Green">
+        <Button x:Name="news_button" Content="Get the news" Margin="300,467,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
+        <TextBlock x:Name="news_tb" HorizontalAlignment="Left" Margin="300,505,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="318" Width="639"/>
+        <Button x:Name="next_news_button" Content="Next news" Margin="665,467,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
+        <Button x:Name="prev_news_button" Content="Previous news" Margin="529,467,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
+        <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="300,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
+    </Grid>
+    
+</Page>
