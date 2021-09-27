@@ -46,6 +46,7 @@ namespace Morning_wakeup_app
         {
             if (ShareListBoxItem.IsSelected) { frame.Navigate(typeof(Page1)); }
             else if (FavoritesListBoxItem.IsSelected) { frame.Navigate(typeof(Page2)); }
+            else if (MediaListBoxItem.IsSelected) { frame.Navigate(typeof(MusicPage)); }
         }
     }
 }

@@ -31,13 +31,19 @@
                     <ListBoxItem Name="ShareListBoxItem">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72D;" />
-                            <TextBlock Text="Share" FontSize="24" Margin="20,0,0,0" />
+                            <TextBlock Text="Weather" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="FavoritesListBoxItem">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
-                            <TextBlock Text="Favorites" FontSize="24" Margin="20,0,0,0" />
+                            <TextBlock Text="News" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="MediaListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock Text="Music" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                 </ListBox>
