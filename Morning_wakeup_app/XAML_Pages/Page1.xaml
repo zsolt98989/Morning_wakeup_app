@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Morning_wakeup_app.XAML_Pages.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Morning_wakeup_app.XAML_Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Yellow">
+        <Button x:Name="weather_button" Content="Get current weather informations" Margin="300,105,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
+        <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="300,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
+        <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="600,55,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weather_search_input_tb" HorizontalAlignment="Left" Margin="300,68,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
+    </Grid>
+    
+</Page>

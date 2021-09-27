@@ -8,12 +8,43 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Button Content="Get current weather informations" Margin="57,55,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="72,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
-        <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="501,55,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="news_button" Content="Get the news" Margin="72,547,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
-        <TextBlock x:Name="news_tb" HorizontalAlignment="Left" Margin="72,625,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="229" Width="346"/>
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="time_tb" HorizontalAlignment="Left" Margin="1318,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="139"/>
+        <Frame x:Name="frame" Background="Azure" Grid.Row="1" Margin="0,0,0,0" />
+        <RelativePanel>
+            <Button Name="testButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="testButton_Click" />
+        </RelativePanel>
+        <SplitView Name="MySplitView"
+                   Grid.Row="1"
+                    DisplayMode="CompactOverlay"
+                   OpenPaneLength="300" 
+                   CompactPaneLength="56" 
+                   HorizontalAlignment="Left">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single"
+                     Name="IconsListBox" 
+                     SelectionChanged="IconsListBox_SelectionChanged">
+                    <ListBoxItem Name="ShareListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72D;" />
+                            <TextBlock Text="Share" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="FavoritesListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock Text="Favorites" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <TextBlock Name="ResultTextBlock" />
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>

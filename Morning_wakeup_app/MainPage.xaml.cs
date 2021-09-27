@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Morning_wakeup_app.XAML_Pages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-using static Morning_wakeup_app.News;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -24,24 +24,28 @@ namespace Morning_wakeup_app
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        DispatcherTimer Second_timer = new DispatcherTimer();
         public MainPage()
         {
             this.InitializeComponent();
+
+            Second_timer.Tick += Second_timer_Tick;
+            Second_timer.Interval = new TimeSpan(0, 0, 1);
+            Second_timer.Start();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Second_timer_Tick(object sender, object e)
         {
-            Root myWeather = await Current_weather.GetWeatherInformations();
-            string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", myWeather.weather[0].icon);
-            Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
-
-            weather_textblock.Text = myWeather.name + "\n" + myWeather.main.temp + " C " + "\n" +  myWeather.main.feels_like + " C" + "\n" + myWeather.main.humidity + " %" +"\n" + myWeather.main.pressure + " Pa" + "\n" + myWeather.weather[0].description;
+            time_tb.Text = DateTime.Now.ToString("h:mm:ss tt");
         }
-
-        private async void news_button_Click(object sender, RoutedEventArgs e)
+        private void testButton_Click(object sender, RoutedEventArgs e)
         {
-            List<Article> articles = await News.GetArticlesMain();
-            news_tb.Text = articles.First().title;
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ShareListBoxItem.IsSelected) { frame.Navigate(typeof(Page1)); }
+            else if (FavoritesListBoxItem.IsSelected) { frame.Navigate(typeof(Page2)); }
         }
     }
 }
