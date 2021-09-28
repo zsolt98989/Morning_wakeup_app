@@ -38,7 +38,6 @@ namespace Morning_wakeup_app.XAML_Pages
 
         private async void Get_File_Names()
         {
-            string temp;
             Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
             fileEntries = Directory.GetFiles(folder.Path);
             int length_dir = folder.Path.Length + 1;

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Morning_wakeup_app.XAML_Pages.Page1"
+    x:Class="Morning_wakeup_app.XAML_Pages.WeatherPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Morning_wakeup_app.XAML_Pages"

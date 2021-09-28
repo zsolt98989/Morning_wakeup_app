@@ -21,9 +21,9 @@ namespace Morning_wakeup_app.XAML_Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Page1 : Page
+    public sealed partial class WeatherPage : Page
     {
-        public Page1()
+        public WeatherPage()
         {
             this.InitializeComponent();
         }
