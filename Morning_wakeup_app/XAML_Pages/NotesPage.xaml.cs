@@ -20,10 +20,9 @@ namespace Morning_wakeup_app.XAML_Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class NotePage : Page
+    public sealed partial class NotesPage : Page
     {
-        string[] notes;
-        public NotePage()
+        public NotesPage()
         {
             this.InitializeComponent();
         }

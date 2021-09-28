@@ -131,6 +131,9 @@
     <Compile Include="XAML_Pages\NotePage.xaml.cs">
       <DependentUpon>NotePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XAML_Pages\NotesPage.xaml.cs">
+      <DependentUpon>NotesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XAML_Pages\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
@@ -146,7 +149,7 @@
   <ItemGroup>
     <Content Include="Assets\Music\B3nte &amp; B3VA - La La La %28Official Audio%29.mp3" />
     <Content Include="Assets\Music\RED BULL PILVAKER Szeptember végén %28Halott Pénz, Fluor, Deego, Singh Viki%29 Official Music Vide.mp3" />
-    <Content Include="Assets\YAMINA Neon Official Music Video.mp3" />
+    <Content Include="Assets\Music\YAMINA Neon Official Music Video.mp3" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -170,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="XAML_Pages\NotePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML_Pages\NotesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

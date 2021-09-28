@@ -28,22 +28,28 @@
                 <ListBox SelectionMode="Single"
                      Name="IconsListBox" 
                      SelectionChanged="IconsListBox_SelectionChanged">
-                    <ListBoxItem Name="ShareListBoxItem">
+                    <ListBoxItem Name="WeatherListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72D;" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE753;" />
                             <TextBlock Text="Weather" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem Name="FavoritesListBoxItem">
+                    <ListBoxItem Name="NewsListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8F3;" />
                             <TextBlock Text="News" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="MediaListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8D6;" />
                             <TextBlock Text="Music" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="NoteListBoxItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE70F;" />
+                            <TextBlock Text="Notes" FontSize="24" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                 </ListBox>
