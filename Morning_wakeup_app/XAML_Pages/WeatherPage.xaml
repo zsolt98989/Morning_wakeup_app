@@ -5,14 +5,14 @@
     xmlns:local="using:Morning_wakeup_app.XAML_Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid Background="Yellow">
-        <Button x:Name="weather_button" Content="Get current weather informations" Margin="300,105,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
-        <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="300,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
-        <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="600,55,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="weather_search_input_tb" HorizontalAlignment="Left" Margin="300,68,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
+    <Grid>
+        <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button x:Name="weather_button" Content="Get current weather informations" Margin="647,228,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
+        <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="647,302,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
+        <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="1071,200,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weather_search_input_tb" HorizontalAlignment="Left" Margin="647,191,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
     </Grid>
-    
+
 </Page>

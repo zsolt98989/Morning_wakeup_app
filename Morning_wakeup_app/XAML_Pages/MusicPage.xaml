@@ -5,10 +5,10 @@
     xmlns:local="using:Morning_wakeup_app.XAML_Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid Background="Blue" RenderTransformOrigin="0.526,0.387">
+    <Grid RenderTransformOrigin="0.526,0.387">
+        <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Button x:Name="play_button" Content="Play" Margin="603,253,0,0" VerticalAlignment="Top" Click="play_button_Click_1"/>
         <TextBlock x:Name="currently_playing_tb" HorizontalAlignment="Left" Margin="553,118,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="346"/>
         <Button x:Name="next_music_button" Content="Next song" Margin="688,253,0,0" VerticalAlignment="Top" Click="next_music_button_Click"/>

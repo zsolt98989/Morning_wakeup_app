@@ -144,6 +144,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\MainPage\mainpage.jpg" />
     <Content Include="Assets\Music\B3nte &amp; B3VA - La La La %28Official Audio%29.mp3" />
     <Content Include="Assets\Music\RED BULL PILVAKER Szeptember végén %28Halott Pénz, Fluor, Deego, Singh Viki%29 Official Music Vide.mp3" />
     <Content Include="Assets\Music\YAMINA Neon Official Music Video.mp3" />
