@@ -44,8 +44,10 @@ namespace Morning_wakeup_app
         }
         private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ShareListBoxItem.IsSelected) { frame.Navigate(typeof(Page1)); }
-            else if (FavoritesListBoxItem.IsSelected) { frame.Navigate(typeof(Page2)); }
+            if (WeatherListBoxItem.IsSelected) { frame.Navigate(typeof(Page1)); }
+            else if (NewsListBoxItem.IsSelected) { frame.Navigate(typeof(Page2)); }
+            else if (MediaListBoxItem.IsSelected) { frame.Navigate(typeof(MusicPage)); }
+            else if (NoteListBoxItem.IsSelected) { frame.Navigate(typeof(NotesPage)); }
         }
     }
 }
