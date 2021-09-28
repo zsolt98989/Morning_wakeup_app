@@ -5,48 +5,51 @@
     xmlns:local="using:Morning_wakeup_app"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="35.833" />
+            <RowDefinition Height="30.567"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Frame x:Name="frame" Background="Azure" Grid.RowSpan="2" />
-        <Button Name="testButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="testButton_Click" />
-            <SplitView Name="MySplitView"
-                   Grid.Row="1"
+        <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Frame x:Name="frame" Background="Transparent" Grid.RowSpan="3"/>
+        <TextBlock x:Name="time_tb" HorizontalAlignment="Left" Margin="1318,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="139" Grid.RowSpan="2"/>
+        <RelativePanel Grid.RowSpan="2">
+            <Button Name="testButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="50" Click="testButton_Click" Height="66" Width="120" />
+        </RelativePanel>
+        <SplitView Name="MySplitView"
                     DisplayMode="CompactOverlay"
                    OpenPaneLength="300" 
-                   CompactPaneLength="56" 
-                   HorizontalAlignment="Left">
+                   CompactPaneLength="120" 
+                   HorizontalAlignment="Left" Margin="0,30,0,0" Grid.RowSpan="2" Grid.Row="1">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single"
                      Name="IconsListBox" 
                      SelectionChanged="IconsListBox_SelectionChanged">
                     <ListBoxItem Name="WeatherListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE753;" />
-                            <TextBlock Text="Weather" FontSize="24" Margin="20,0,0,0" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="50" Margin="25,15,0,0" Text="&#xE753;" />
+                            <TextBlock Text="Weather" FontWeight="SemiBold" FontSize="30" Margin="60,20,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="NewsListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8F3;" />
-                            <TextBlock Text="News" FontSize="24" Margin="20,0,0,0" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="50" Margin="25,15,0,0" Text="&#xE8F3;"/>
+                            <TextBlock Text="News" FontWeight="SemiBold" FontSize="30" Margin="60,20,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="MediaListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE8D6;" />
-                            <TextBlock Text="Music" FontSize="24" Margin="20,0,0,0" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="50" Margin="25,15,0,0" Text="&#xE8D6;" />
+                            <TextBlock Text="Music" FontWeight="SemiBold" FontSize="30" Margin="60,20,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                     <ListBoxItem Name="NoteListBoxItem">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE70F;" />
-                            <TextBlock Text="Notes" FontSize="24" Margin="20,0,0,0" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="50" Margin="25,15,0,0" Text="&#xE70F;" />
+                            <TextBlock Text="Notes" FontWeight="SemiBold" FontSize="30" Margin="60,20,0,0" />
                         </StackPanel>
                     </ListBoxItem>
                 </ListBox>
@@ -55,6 +58,5 @@
                 <TextBlock Name="ResultTextBlock" />
             </SplitView.Content>
         </SplitView>
-        <TextBlock x:Name="time_tb" HorizontalAlignment="Left" Margin="1318,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="139"/>
     </Grid>
 </Page>
