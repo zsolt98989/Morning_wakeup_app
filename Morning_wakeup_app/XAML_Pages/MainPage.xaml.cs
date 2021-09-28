@@ -32,6 +32,7 @@ namespace Morning_wakeup_app
             Second_timer.Tick += Second_timer_Tick;
             Second_timer.Interval = new TimeSpan(0, 0, 1);
             Second_timer.Start();
+            
         }
 
         private void Second_timer_Tick(object sender, object e)

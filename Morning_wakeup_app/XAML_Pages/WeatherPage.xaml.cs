@@ -39,5 +39,11 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             Current_weather.search_by = weather_search_input_tb.Text;
         }
+
+        private void to_mainpage_button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+            Frame.Content = null;
+        }
     }
 }
