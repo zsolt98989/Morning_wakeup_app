@@ -27,6 +27,7 @@ namespace Morning_wakeup_app.XAML_Pages
         public WeatherPage()
         {
             this.InitializeComponent();
+
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
@@ -39,6 +40,7 @@ namespace Morning_wakeup_app.XAML_Pages
         private void weather_search_input_tb_TextChanged(object sender, TextChangedEventArgs e)
         {
             Current_weather.search_by = weather_search_input_tb.Text;
+            //Weather_forecast.Convert_city_to_coord(weather_search_input_tb.Text);
         }
 
         private void to_mainpage_button_Click(object sender, RoutedEventArgs e)
@@ -56,7 +58,18 @@ namespace Morning_wakeup_app.XAML_Pages
         private async void forecast_button_Click(object sender, RoutedEventArgs e)
         {
             var flag = await Weather_forecast.GetWeatherForecastInformations();
-            forecast_textblock.Text = Weather_forecast.weather_forecasts.hourly[0].temp + "\n" + Weather_forecast.weather_forecasts.hourly[1].temp + "\n" + Weather_forecast.weather_forecasts.hourly[2].temp + "\n" + Weather_forecast.weather_forecasts.hourly[3].temp + "\n !" + Weather_forecast.weather_forecasts.hourly.Count;
+            forecast_textblock.Text = "Please move the slider to show values";
+        }
+
+        private void forecast_slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            if (Weather_forecast.weather_forecasts != null)
+            {
+                forecast_textblock.Text = "lat: " + Weather_forecast.weather_forecasts.lat.ToString() + "\nlon: " + Weather_forecast.weather_forecasts.lon.ToString() + "\nCurrent: " + Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value-1].temp.ToString() + " C" + "\nFeels like: " + Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value - 1].feels_like.ToString() + " C" + "\n" + Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value-1].humidity + " %" + "humidity" + "\n" + (Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value - 1].pop*100).ToString() + " % probability of precipitation";
+                string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value-1].weather[0].icon);
+                forecast_image.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
+            }
+                
         }
     }
 }

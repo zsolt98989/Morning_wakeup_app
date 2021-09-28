@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
@@ -14,11 +13,13 @@ namespace Morning_wakeup_app.Classes
     class Weather_forecast
     {
         public static Root weather_forecasts;
+        static public double lon = 19.040236;
+        static public double lat = 47.497913;
 
         public async static Task<bool> GetWeatherForecastInformations()
         {
             var http = new HttpClient();
-            string url = String.Format("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=current,minutely,daily,alerts&appid=fddc3f024e2f2d470a0582adfc97d810&units=metric");
+            string url = String.Format("https://api.openweathermap.org/data/2.5/onecall?lat={0}&lon={1}&exclude=current,minutely,daily,alerts&appid=fddc3f024e2f2d470a0582adfc97d810&units=metric", lat, lon);
             var response = await http.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(Root));
@@ -28,6 +29,7 @@ namespace Morning_wakeup_app.Classes
             weather_forecasts = (Root)serializer.ReadObject(ms);
             return true; //Todo: hibavizsgálat visszatérésnél, nem csak simán true-t visszaadni
         }
+
 
     }
 

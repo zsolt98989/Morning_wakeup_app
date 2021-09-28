@@ -9,13 +9,15 @@
 
     <Grid>
         <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Button x:Name="weather_button" Content="Get current weather informations" Margin="618,148,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
-        <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="563,184,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
-        <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="1071,200,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="weather_search_input_tb" HorizontalAlignment="Left" Margin="647,111,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
+        <Button x:Name="weather_button" Content="Get current weather informations" Margin="341,127,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
+        <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="289,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
+        <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="650,170,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="weather_search_input_tb" HorizontalAlignment="Left" Margin="370,90,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
         <Button x:Name="close_weather_page_button" Content="X" Margin="1433,10,0,0" VerticalAlignment="Top" Height="62" Width="57" Click="close_weather_page_button_Click"/>
-        <Button x:Name="forecast_button" Content="Get forecast" Margin="0,445,0,0" VerticalAlignment="Top" Click="forecast_button_Click" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="forecast_textblock" HorizontalAlignment="Left" Margin="1121,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="204" Width="281"/>
+        <Button x:Name="forecast_button" Content="Get forecast" Margin="1142,122,0,0" VerticalAlignment="Top" Click="forecast_button_Click"/>
+        <TextBlock x:Name="forecast_textblock" HorizontalAlignment="Left" Margin="1106,161,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="117" Width="169"/>
+        <Slider x:Name="forecast_slider" HorizontalAlignment="Left" Margin="1049,285,0,0" VerticalAlignment="Top" Width="283" Height="67" TickFrequency="1" ValueChanged="forecast_slider_ValueChanged" Maximum="48" Minimum="1"/>
+        <Image x:Name="forecast_image" HorizontalAlignment="Left" Height="100" Margin="1337,171,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 
 </Page>
