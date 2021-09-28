@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Morning_wakeup_app.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -50,6 +51,12 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             Frame.Navigate(typeof(MainPage));
             Frame.Content = null;
+        }
+
+        private async void forecast_button_Click(object sender, RoutedEventArgs e)
+        {
+            var flag = await Weather_forecast.GetWeatherForecastInformations();
+            forecast_textblock.Text = Weather_forecast.weather_forecasts.hourly[0].temp + "\n" + Weather_forecast.weather_forecasts.hourly[1].temp + "\n" + Weather_forecast.weather_forecasts.hourly[2].temp + "\n" + Weather_forecast.weather_forecasts.hourly[3].temp + "\n !" + Weather_forecast.weather_forecasts.hourly.Count;
         }
     }
 }

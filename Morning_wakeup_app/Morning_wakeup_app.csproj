@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Current_weather.cs" />
+    <Compile Include="Classes\Weather_forecast.cs" />
     <Compile Include="XAML_Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
