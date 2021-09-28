@@ -45,5 +45,11 @@ namespace Morning_wakeup_app.XAML_Pages
             Frame.Navigate(typeof(MainPage));
             Frame.Content = null;
         }
+
+        private void close_weather_page_button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+            Frame.Content = null;
+        }
     }
 }

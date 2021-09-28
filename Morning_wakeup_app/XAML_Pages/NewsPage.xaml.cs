@@ -59,5 +59,11 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             News.search_by = news_search_input_tb.Text;
         }
+
+        private void close_news_page_button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+            Frame.Content = null;
+        }
     }
 }

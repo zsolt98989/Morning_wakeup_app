@@ -9,5 +9,6 @@
 
     <Grid>
         <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button x:Name="close_notes_page_button" Content="X" Margin="1431,10,0,0" VerticalAlignment="Top" Height="61" Width="59" Click="close_notes_page_button_Click"/>
     </Grid>
 </Page>

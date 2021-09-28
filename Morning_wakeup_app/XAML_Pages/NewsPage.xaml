@@ -14,6 +14,7 @@
         <Button x:Name="next_news_button" Content="Next news" Margin="957,166,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
         <Button x:Name="prev_news_button" Content="Previous news" Margin="720,166,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
         <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="422,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
+        <Button x:Name="close_news_page_button" Content="X" Margin="1435,10,0,0" VerticalAlignment="Top" Height="63" Width="55" Click="close_news_page_button_Click"/>
     </Grid>
 
 </Page>

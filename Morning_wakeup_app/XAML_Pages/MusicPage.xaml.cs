@@ -24,7 +24,7 @@ namespace Morning_wakeup_app.XAML_Pages
     /// </summary>
     public sealed partial class MusicPage : Page
     {
-        MediaPlayer mplayer;
+        static public MediaPlayer mplayer;
         bool is_playing;
         string[] fileEntries;
         int currently_playing_index = 0;
@@ -84,6 +84,13 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             if (currently_playing_index != 0)
                 currently_playing_index -= 1;
+        }
+
+        private void close_music_page_button_Click(object sender, RoutedEventArgs e)
+        {
+            mplayer.Pause();
+            Frame.Navigate(typeof(MainPage));
+            Frame.Content = null;
         }
     }
 }

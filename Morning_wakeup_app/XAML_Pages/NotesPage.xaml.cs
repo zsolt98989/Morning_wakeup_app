@@ -31,5 +31,11 @@ namespace Morning_wakeup_app.XAML_Pages
         {
 
         }
+
+        private void close_notes_page_button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+            Frame.Content = null;
+        }
     }
 }

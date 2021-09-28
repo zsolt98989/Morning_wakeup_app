@@ -47,11 +47,13 @@ namespace Morning_wakeup_app
         {
             if (WeatherListBoxItem.IsSelected)
             {
+                MusicPage.mplayer.Pause();
                 frame.Content = null;
                 frame.Navigate(typeof(WeatherPage));
             }
             else if (NewsListBoxItem.IsSelected)
             {
+                MusicPage.mplayer.Pause();
                 frame.Content = null;
                 frame.Navigate(typeof(NewsPage));
             }
@@ -62,6 +64,7 @@ namespace Morning_wakeup_app
             }
             else if (NoteListBoxItem.IsSelected)
             {
+                MusicPage.mplayer.Pause();
                 frame.Content = null;
                 frame.Navigate(typeof(NotesPage));
             }

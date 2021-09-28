@@ -13,5 +13,6 @@
         <TextBlock x:Name="currently_playing_tb" HorizontalAlignment="Left" Margin="553,118,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="346"/>
         <Button x:Name="next_music_button" Content="Next song" Margin="688,253,0,0" VerticalAlignment="Top" Click="next_music_button_Click"/>
         <Button x:Name="prev_music_button" Content="Previous song" Margin="458,253,0,0" VerticalAlignment="Top" Click="prev_music_button_Click"/>
+        <Button x:Name="close_music_page_button" Content="X" Margin="1433,10,0,0" VerticalAlignment="Top" Height="64" Width="57" Click="close_music_page_button_Click"/>
     </Grid>
 </Page>
