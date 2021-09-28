@@ -26,5 +26,10 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             this.InitializeComponent();
         }
+
+        private void NotesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

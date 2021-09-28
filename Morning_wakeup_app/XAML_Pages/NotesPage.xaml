@@ -11,7 +11,7 @@
     <Grid>
         <ListBox SelectionMode="Single"
                      Name="NotesListBox"
-                     SelectionChanged="NotesListBox_SelectionChanged">>
+                     SelectionChanged="NotesListBox_SelectionChanged">
             <ListBoxItem Name="WeatherListBoxItem">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE753;" />
