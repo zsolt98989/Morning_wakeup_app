@@ -43,11 +43,6 @@ namespace Morning_wakeup_app.XAML_Pages
             //Weather_forecast.Convert_city_to_coord(weather_search_input_tb.Text);
         }
 
-        private void to_mainpage_button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-            Frame.Content = null;
-        }
 
         private void close_weather_page_button_Click(object sender, RoutedEventArgs e)
         {

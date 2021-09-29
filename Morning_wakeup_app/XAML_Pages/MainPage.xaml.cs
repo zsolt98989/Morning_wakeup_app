@@ -73,9 +73,5 @@ namespace Morning_wakeup_app
             }
         }
 
-        private void TextBlock_SelectionChanged()
-        {
-
-        }
     }
 }
