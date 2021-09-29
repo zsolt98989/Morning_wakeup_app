@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using static Morning_wakeup_app.News;
 
@@ -32,38 +33,56 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             var flag = await News.GetArticlesMain();
             News.current_news_index = 0;
-            news_tb.Text = News.news_articles.First().title + "\n" + News.news_articles.First().author + "\n" + News.news_articles.First().description;
+            int length = News.news_articles.Count();
+            if (News.news_articles != null)
+                fill_news_tables();
         }
         private void next_news_button_Click(object sender, RoutedEventArgs e)
         {
             int length = News.news_articles.Count();
             if (News.news_articles != null)
             {
-                if (News.current_news_index + 1 != length)
-                    News.current_news_index += 1;
-                news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
+                if (News.current_news_index + 3 < length)
+                    News.current_news_index += 3;
+                fill_news_tables();
             }
-
         }
         private void prev_news_button_Click(object sender, RoutedEventArgs e)
         {
             //var flag = await News.GetArticlesMain();
             if (News.news_articles != null)
             {
-                if (News.current_news_index > 0)
-                    News.current_news_index -= 1;
-                news_tb.Text = News.news_articles[News.current_news_index].title + "\n" + News.news_articles[News.current_news_index].author + "\n" + News.news_articles[News.current_news_index].description;
+                if (News.current_news_index - 3 >= 0)
+                    News.current_news_index -= 3;
+                fill_news_tables();
             }
         }
         private void news_search_input_tb_TextChanged(object sender, TextChangedEventArgs e)
         {
             News.search_by = news_search_input_tb.Text;
         }
-
         private void close_news_page_button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
             Frame.Content = null;
+        }
+        private void fill_news_tables()
+        {
+            news_date1.Text = News.news_articles[News.current_news_index].publishedAt.ToString();
+            news_title1.Text = News.news_articles[News.current_news_index].title;
+            news_author1.Text = News.news_articles[News.current_news_index].author;
+            news_description1.Text = News.news_articles[News.current_news_index].description;
+            news_imageurl1.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index].urlToImage, UriKind.Absolute));
+            news_date2.Text = News.news_articles[News.current_news_index + 1].publishedAt.ToString();
+            news_title2.Text = News.news_articles[News.current_news_index + 1].title;
+            news_author2.Text = News.news_articles[News.current_news_index + 1].author;
+            news_description2.Text = News.news_articles[News.current_news_index + 1].description;
+            news_imageurl2.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index + 1].urlToImage, UriKind.Absolute));
+            news_date3.Text = News.news_articles[News.current_news_index + 2].publishedAt.ToString();
+            news_title3.Text = News.news_articles[News.current_news_index + 2].title;
+            news_author3.Text = News.news_articles[News.current_news_index + 2].author;
+            news_description3.Text = News.news_articles[News.current_news_index + 2].description;
+            news_imageurl3.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index + 2].urlToImage, UriKind.Absolute));
         }
     }
 }
