@@ -67,7 +67,8 @@ namespace Morning_wakeup_app.XAML_Pages
             {
                 forecast_textblock.Text = "lat: " + Weather_forecast.weather_forecasts.lat.ToString() + "\nlon: " + Weather_forecast.weather_forecasts.lon.ToString() + "\nCurrent: " + Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value-1].temp.ToString() + " C" + "\nFeels like: " + Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value - 1].feels_like.ToString() + " C" + "\n" + Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value-1].humidity + " %" + "humidity" + "\n" + (Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value - 1].pop*100).ToString() + " % probability of precipitation";
                 string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Weather_forecast.weather_forecasts.hourly[(int)forecast_slider.Value-1].weather[0].icon);
-                forecast_image.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
+                if (forecast_image != null)
+                    forecast_image.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
             }
                 
         }

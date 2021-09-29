@@ -29,6 +29,7 @@ namespace Morning_wakeup_app.Classes
             weather_forecasts = (Root)serializer.ReadObject(ms);
             return true; //Todo: hibavizsgálat visszatérésnél, nem csak simán true-t visszaadni
         }
+     
 
 
     }

@@ -72,5 +72,10 @@ namespace Morning_wakeup_app
                 frame.Navigate(typeof(NotesPage));
             }
         }
+
+        private void TextBlock_SelectionChanged()
+        {
+
+        }
     }
 }

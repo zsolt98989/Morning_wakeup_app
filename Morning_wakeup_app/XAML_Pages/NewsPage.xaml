@@ -9,12 +9,12 @@
 
     <Grid>
         <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Button x:Name="news_button" Content="Get the news" Margin="422,161,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
+        <Button x:Name="news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE774;" FontSize="50" Margin="539,166,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
         <TextBlock x:Name="news_tb" HorizontalAlignment="Left" Margin="422,237,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="318" Width="639"/>
-        <Button x:Name="next_news_button" Content="Next news" Margin="957,166,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
-        <Button x:Name="prev_news_button" Content="Previous news" Margin="720,166,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
+        <Button x:Name="next_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" FontSize="50" Margin="797,166,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
+        <Button x:Name="prev_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" FontSize="50" Margin="422,166,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
         <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="422,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
-        <Button x:Name="close_news_page_button" Content="X" Margin="1435,10,0,0" VerticalAlignment="Top" Height="63" Width="55" Click="close_news_page_button_Click"/>
+        <Button x:Name="close_news_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" Margin="1409,10,0,0" VerticalAlignment="Top" Height="63" Width="81" Click="close_news_page_button_Click"/>
     </Grid>
 
 </Page>

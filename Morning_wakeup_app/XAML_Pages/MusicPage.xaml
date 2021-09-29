@@ -9,10 +9,10 @@
 
     <Grid RenderTransformOrigin="0.526,0.387">
         <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Button x:Name="play_button" Content="Play" Margin="603,253,0,0" VerticalAlignment="Top" Click="play_button_Click_1"/>
+        <Button x:Name="play_button" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" FontSize="50" Margin="694,253,0,0" VerticalAlignment="Top" Click="play_button_Click_1"/>
         <TextBlock x:Name="currently_playing_tb" HorizontalAlignment="Left" Margin="553,118,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="346"/>
-        <Button x:Name="next_music_button" Content="Next song" Margin="688,253,0,0" VerticalAlignment="Top" Click="next_music_button_Click"/>
-        <Button x:Name="prev_music_button" Content="Previous song" Margin="458,253,0,0" VerticalAlignment="Top" Click="prev_music_button_Click"/>
-        <Button x:Name="close_music_page_button" Content="X" Margin="1433,10,0,0" VerticalAlignment="Top" Height="64" Width="57" Click="close_music_page_button_Click"/>
+        <Button x:Name="next_music_button" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" FontSize="50" Margin="827,253,0,0" VerticalAlignment="Top" Click="next_music_button_Click"/>
+        <Button x:Name="prev_music_button" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" FontSize="50" Margin="552,253,0,0" VerticalAlignment="Top" Click="prev_music_button_Click"/>
+        <Button x:Name="close_music_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" Margin="1409,10,0,0" VerticalAlignment="Top" Height="64" Width="81" Click="close_music_page_button_Click"/>
     </Grid>
 </Page>

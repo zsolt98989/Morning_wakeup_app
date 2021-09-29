@@ -34,6 +34,20 @@ namespace Morning_wakeup_app.XAML_Pages
             mplayer = new MediaPlayer();
             is_playing = false;
             Get_File_Names();
+            Load_files();
+
+        }
+
+        private async void Load_files()
+        {
+            this.Get_File_Names();
+            currently_playing_tb.Text = fileEntries[currently_playing_index];
+
+            Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
+            Windows.Storage.StorageFile file = await folder.GetFileAsync(fileEntries[currently_playing_index]);
+
+            mplayer.AutoPlay = false;
+            mplayer.Source = MediaSource.CreateFromStorageFile(file);
         }
 
         private async void Get_File_Names()
@@ -50,20 +64,13 @@ namespace Morning_wakeup_app.XAML_Pages
         }
 
 
-        private async void play_button_Click_1(object sender, RoutedEventArgs e)
+        private void play_button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Get_File_Names();
-            currently_playing_tb.Text = fileEntries[currently_playing_index];
-
-            Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
-            Windows.Storage.StorageFile file = await folder.GetFileAsync(fileEntries[currently_playing_index]);
-
-            mplayer.AutoPlay = false;
-            mplayer.Source = MediaSource.CreateFromStorageFile(file);
+            
 
             if (is_playing)
             {
-                mplayer.Source = null;
+                mplayer.Pause();
                 is_playing = false;
             }
             else
@@ -77,13 +84,21 @@ namespace Morning_wakeup_app.XAML_Pages
         private void next_music_button_Click(object sender, RoutedEventArgs e)
         {
             if (currently_playing_index != fileEntries.Length - 1)
+            {
                 currently_playing_index += 1;
+                Load_files();
+            }
+                
         }
 
         private void prev_music_button_Click(object sender, RoutedEventArgs e)
         {
             if (currently_playing_index != 0)
+            {
                 currently_playing_index -= 1;
+                Load_files();
+            }
+                
         }
 
         private void close_music_page_button_Click(object sender, RoutedEventArgs e)
