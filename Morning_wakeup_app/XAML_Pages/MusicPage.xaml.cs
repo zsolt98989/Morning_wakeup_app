@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
 using Windows.Media.Playback;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,6 +32,10 @@ namespace Morning_wakeup_app.XAML_Pages
         public MusicPage()
         {
             this.InitializeComponent();
+
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+
+
             mplayer = new MediaPlayer();
             is_playing = false;
             Get_File_Names();

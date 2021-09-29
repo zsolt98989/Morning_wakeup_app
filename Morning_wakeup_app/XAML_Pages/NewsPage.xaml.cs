@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,6 +29,8 @@ namespace Morning_wakeup_app.XAML_Pages
         public NewsPage()
         {
             this.InitializeComponent();
+
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
         }
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
