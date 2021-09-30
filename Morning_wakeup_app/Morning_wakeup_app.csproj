@@ -195,6 +195,11 @@
       <Version>4.3.4</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\digital-7.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

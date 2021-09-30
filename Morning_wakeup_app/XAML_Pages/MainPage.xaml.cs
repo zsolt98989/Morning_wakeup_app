@@ -30,7 +30,8 @@ namespace Morning_wakeup_app
         {
             this.InitializeComponent();
 
-            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             Second_timer.Tick += Second_timer_Tick;
             Second_timer.Interval = new TimeSpan(0, 0, 1);

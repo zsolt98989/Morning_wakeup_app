@@ -14,8 +14,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Frame x:Name="frame" Background="Transparent" Grid.RowSpan="3"/>
-        <TextBlock x:Name="time_tb" HorizontalAlignment="Left" Margin="1318,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="139" Grid.RowSpan="2"/>
+        <Frame x:Name="frame_top" Background="White" Grid.RowSpan="2"/>
+        <Frame x:Name="frame" Background="Transparent" Grid.RowSpan="2" Margin="0,29,0,0" Grid.Row="1"/>
+        <TextBlock x:Name="time_tb" FontSize="40" FontFamily="/Assets/Fonts/digital-7.ttf" HorizontalAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="66" Width="278" Grid.RowSpan="2"/>
         <RelativePanel Grid.RowSpan="2">
             <Button Name="testButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="50" Click="testButton_Click" Height="66" Width="120" />
         </RelativePanel>

@@ -27,7 +27,8 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             this.InitializeComponent();
 
-            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
         private void NotesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

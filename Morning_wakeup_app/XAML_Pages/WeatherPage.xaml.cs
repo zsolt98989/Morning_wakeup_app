@@ -29,7 +29,8 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             this.InitializeComponent();
 
-            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
