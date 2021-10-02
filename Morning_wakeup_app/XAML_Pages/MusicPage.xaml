@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid RenderTransformOrigin="0.526,0.387">
+    <Grid>
         <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Button x:Name="play_button" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" FontSize="50" Margin="694,253,0,0" VerticalAlignment="Top" Click="play_button_Click_1"/>
         <TextBlock x:Name="currently_playing_tb" HorizontalAlignment="Left" Margin="553,118,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="346"/>

@@ -36,12 +36,14 @@ namespace Morning_wakeup_app
             Second_timer.Tick += Second_timer_Tick;
             Second_timer.Interval = new TimeSpan(0, 0, 1);
             Second_timer.Start();
-            
         }
 
         private void Second_timer_Tick(object sender, object e)
         {
-            time_tb.Text = DateTime.Now.ToString("h:mm:ss tt");
+            time_tb.Text = DateTime.Now.ToString("HH:mm:ss");
+            secondHand.Angle = DateTime.Now.Second * 6;
+            minuteHand.Angle = DateTime.Now.Minute * 6;
+            hourHand.Angle = (DateTime.Now.Hour * 30);
         }
         private void testButton_Click(object sender, RoutedEventArgs e)
         {
@@ -76,6 +78,5 @@ namespace Morning_wakeup_app
                 frame.Navigate(typeof(NotesPage));
             }
         }
-
     }
 }
