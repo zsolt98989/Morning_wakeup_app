@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -30,15 +31,13 @@ namespace Morning_wakeup_app.XAML_Pages
             ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
-
         private void NotesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
         private void close_notes_page_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof(MainPage), null, new DrillInNavigationTransitionInfo());
             Frame.Content = null;
         }
     }

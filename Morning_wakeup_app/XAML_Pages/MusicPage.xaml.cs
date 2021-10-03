@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -53,7 +54,6 @@ namespace Morning_wakeup_app.XAML_Pages
             mplayer.AutoPlay = false;
             mplayer.Source = MediaSource.CreateFromStorageFile(file);
         }
-
         private async void Get_File_Names()
         {
             Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
@@ -64,14 +64,9 @@ namespace Morning_wakeup_app.XAML_Pages
             {
                 fileEntries[i] = fileEntries[i].Remove(0, length_dir);
             }
-                
         }
-
-
         private void play_button_Click_1(object sender, RoutedEventArgs e)
         {
-            
-
             if (is_playing)
             {
                 mplayer.Pause();
@@ -82,9 +77,7 @@ namespace Morning_wakeup_app.XAML_Pages
                 mplayer.Play();
                 is_playing = true;
             }
-
         }
-
         private void next_music_button_Click(object sender, RoutedEventArgs e)
         {
             if (currently_playing_index != fileEntries.Length - 1)
@@ -94,7 +87,6 @@ namespace Morning_wakeup_app.XAML_Pages
             }
                 
         }
-
         private void prev_music_button_Click(object sender, RoutedEventArgs e)
         {
             if (currently_playing_index != 0)
@@ -102,13 +94,11 @@ namespace Morning_wakeup_app.XAML_Pages
                 currently_playing_index -= 1;
                 Load_files();
             }
-                
         }
-
         private void close_music_page_button_Click(object sender, RoutedEventArgs e)
         {
             mplayer.Pause();
-            Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof(MainPage), null, new DrillInNavigationTransitionInfo());
             Frame.Content = null;
         }
     }

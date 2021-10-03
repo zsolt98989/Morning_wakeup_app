@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -51,31 +52,28 @@ namespace Morning_wakeup_app
         }
         private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            frame.Content = null;
             if (WeatherListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Content = null;
-                frame.Navigate(typeof(WeatherPage));
+                frame.Navigate(typeof(WeatherPage), null, new SuppressNavigationTransitionInfo());
             }
             else if (NewsListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Content = null;
-                frame.Navigate(typeof(NewsPage));
+                frame.Navigate(typeof(NewsPage), null, new SuppressNavigationTransitionInfo());
             }
             else if (MediaListBoxItem.IsSelected)
             {
-                frame.Content = null;
-                frame.Navigate(typeof(MusicPage));
+                frame.Navigate(typeof(MusicPage), null, new SuppressNavigationTransitionInfo());
             }
             else if (NoteListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Content = null;
-                frame.Navigate(typeof(NotesPage));
+                frame.Navigate(typeof(NotesPage), null, new SuppressNavigationTransitionInfo());
             }
         }
     }
