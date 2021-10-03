@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using static Morning_wakeup_app.News;
@@ -68,7 +67,7 @@ namespace Morning_wakeup_app.XAML_Pages
         }
         private void close_news_page_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), null, new DrillInNavigationTransitionInfo());
+            Frame.Navigate(typeof(MainPage));
             Frame.Content = null;
         }
         private void fill_news_tables()

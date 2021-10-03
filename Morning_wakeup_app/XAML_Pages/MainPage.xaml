@@ -15,23 +15,25 @@
         
         <Image Grid.RowSpan="2" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Frame x:Name="frame_top" Background="White" Height="66"/>
+        
         <!--Analog clock -->
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="120,0,0,0" Grid.Row="1">
             <Ellipse Width="450" Height="450" Fill="White"></Ellipse>
+            <Ellipse Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" Fill="Black" Stroke="Black" />
             <!--Second hand -->
-            <Rectangle Name="second" Margin="0.5,0,0,150" Stroke="RoyalBlue" Height="150" Width="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Rectangle Name="second" Margin="0,0,0,150" Stroke="RoyalBlue" Height="150" Width="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Rectangle.RenderTransform>
                     <RotateTransform x:Name="secondHand" CenterX="0" CenterY="150" Angle="0" />
                 </Rectangle.RenderTransform>
             </Rectangle>
             <!-- Minute hand -->
-            <Rectangle Margin="1,0,0,180" Name="minute" Width="2" Height="180" Stroke="Black" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Rectangle Margin="0,0,0,180" Name="minute" Width="2" Height="180" Stroke="Black" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Rectangle.RenderTransform>
                     <RotateTransform x:Name="minuteHand" CenterX="0" CenterY="180" Angle="0" />
                 </Rectangle.RenderTransform>
             </Rectangle>
             <!-- Hour hand -->
-            <Rectangle Margin="1.5,0,0,100" Name="hour " Width="3" Height="100" Stroke="Black" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Rectangle Margin="0,0,0,100" Name="hour " Width="3" Height="100" Stroke="Black" Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Rectangle.RenderTransform>
                     <RotateTransform x:Name="hourHand" CenterX="0" CenterY="100" Angle="0" />
                 </Rectangle.RenderTransform>
@@ -40,16 +42,26 @@
             </Rectangle>
             <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Right" Name="hour_3" Height="2" Width="30" Fill="Black" Stroke="Black">
             </Rectangle>
+            <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_4" Height="2" Width="30" Fill="Black" Stroke="Black">
+            </Rectangle>
+            <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_5" Height="2" Width="30" Fill="Black" Stroke="Black">
+            </Rectangle>
             <Rectangle  VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="hour_6" Height="30" Width="2" Fill="Black" Stroke="Black">
+            </Rectangle>
+            <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_7" Height="2" Width="30" Fill="Black" Stroke="Black">
+            </Rectangle>
+            <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_8" Height="2" Width="30" Fill="Black" Stroke="Black">
             </Rectangle>
             <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_9" Height="2" Width="30" Fill="Black" Stroke="Black">
             </Rectangle>
-            <Ellipse Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" Fill="Black" Stroke="Black" />
+            <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_10" Height="2" Width="30" Fill="Black" Stroke="Black">
+            </Rectangle>
+            <Rectangle  VerticalAlignment="Center" HorizontalAlignment="Left" Name="hour_11" Height="2" Width="30" Fill="Black" Stroke="Black">
+            </Rectangle>
         </Grid>
-        
         <Frame x:Name="frame" Background="Transparent" Margin="0,30,0,0" Grid.Row="1"/>
         <TextBlock x:Name="time_tb" FontSize="70" FontFamily="/Assets/Fonts/digital-7.ttf#Digital-7" Margin="120,0,0,0" HorizontalAlignment="Center"  Grid.Row="0" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="66" Width="200" TextAlignment="Center"/>
-       
+
         <!-- Menu -->
         <RelativePanel Grid.RowSpan="2">
             <Button Name="testButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="50" Click="testButton_Click" Height="66" Width="120" />
