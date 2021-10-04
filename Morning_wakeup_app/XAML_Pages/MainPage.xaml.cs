@@ -6,12 +6,14 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -24,20 +26,35 @@ namespace Morning_wakeup_app
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        DispatcherTimer Second_timer = new DispatcherTimer();
+        static public DispatcherTimer Second_timer = new DispatcherTimer();
+        static public TextBlock Title = new TextBlock();
         public MainPage()
         {
             this.InitializeComponent();
 
+            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
             Second_timer.Tick += Second_timer_Tick;
             Second_timer.Interval = new TimeSpan(0, 0, 1);
             Second_timer.Start();
-            
-        }
 
+            Title.FontFamily = new FontFamily("/Assets/Fonts/Highman.ttf#Highman Trial");
+            Title.FontSize = 70;
+            Title.Margin = new Thickness(120, 0, 0, 0);
+            Title.HorizontalAlignment = HorizontalAlignment.Center;
+            Title.VerticalAlignment = VerticalAlignment.Bottom;
+            Title.Text = "";
+            Title.Height = 60;
+            Title.Width = 350;
+            Title.TextAlignment = TextAlignment.Center;
+            maingrid.Children.Add(Title);
+
+            frame.Navigate(typeof(InfoPage), null, new SuppressNavigationTransitionInfo());
+        }
         private void Second_timer_Tick(object sender, object e)
         {
-            time_tb.Text = DateTime.Now.ToString("h:mm:ss tt");
+            time_tb.Text = DateTime.Now.ToString("HH:mm:ss");
         }
         private void testButton_Click(object sender, RoutedEventArgs e)
         {
@@ -49,29 +66,24 @@ namespace Morning_wakeup_app
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Content = null;
-                frame.Navigate(typeof(WeatherPage));
+                frame.Navigate(typeof(WeatherPage), null, new EntranceNavigationTransitionInfo());
             }
             else if (NewsListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Content = null;
-                frame.Navigate(typeof(NewsPage));
+                frame.Navigate(typeof(NewsPage), null, new EntranceNavigationTransitionInfo());
             }
             else if (MediaListBoxItem.IsSelected)
             {
-                frame.Content = null;
-                frame.Navigate(typeof(MusicPage));
+                frame.Navigate(typeof(MusicPage), null, new EntranceNavigationTransitionInfo());
             }
             else if (NoteListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Content = null;
-                frame.Navigate(typeof(NotesPage));
+                frame.Navigate(typeof(NotesPage), null, new EntranceNavigationTransitionInfo());
             }
         }
-
     }
 }

@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -22,20 +21,24 @@ namespace Morning_wakeup_app.XAML_Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class NotesPage : Page
+    public sealed partial class InfoPage : Page
     {
-        public NotesPage()
+        public InfoPage()
         {
             this.InitializeComponent();
 
             ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
-            MainPage.Title.Text = "Notes Page";
+            MainPage.Second_timer.Tick += Second_timer_Tick;
+
+            MainPage.Title.Text = "Main Page";
         }
-        private void close_notes_page_button_Click(object sender, RoutedEventArgs e)
+        private void Second_timer_Tick(object sender, object e)
         {
-            Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
+            secondHand.Angle = DateTime.Now.Second * 6;
+            minuteHand.Angle = DateTime.Now.Minute * 6;
+            hourHand.Angle = (DateTime.Now.Hour * 30);
         }
     }
 }

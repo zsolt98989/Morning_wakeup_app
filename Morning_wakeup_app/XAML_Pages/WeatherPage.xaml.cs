@@ -6,12 +6,14 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -28,6 +30,10 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             this.InitializeComponent();
 
+            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            MainPage.Title.Text = "Weather Page";
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
@@ -42,20 +48,15 @@ namespace Morning_wakeup_app.XAML_Pages
             Current_weather.search_by = weather_search_input_tb.Text;
             //Weather_forecast.Convert_city_to_coord(weather_search_input_tb.Text);
         }
-
-
         private void close_weather_page_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
-            Frame.Content = null;
+            Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
         }
-
         private async void forecast_button_Click(object sender, RoutedEventArgs e)
         {
             var flag = await Weather_forecast.GetWeatherForecastInformations();
             forecast_textblock.Text = "Please move the slider to show values";
         }
-
         private void forecast_slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             if (Weather_forecast.weather_forecasts != null)
@@ -65,7 +66,6 @@ namespace Morning_wakeup_app.XAML_Pages
                 if (forecast_image != null)
                     forecast_image.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
             }
-                
         }
     }
 }

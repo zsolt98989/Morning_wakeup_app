@@ -5,12 +5,14 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using static Morning_wakeup_app.News;
@@ -28,6 +30,11 @@ namespace Morning_wakeup_app.XAML_Pages
         public NewsPage()
         {
             this.InitializeComponent();
+
+            ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            MainPage.Title.Text = "News Page";
         }
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
@@ -63,8 +70,7 @@ namespace Morning_wakeup_app.XAML_Pages
         }
         private void close_news_page_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
-            Frame.Content = null;
+            Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
         }
         private void fill_news_tables()
         {

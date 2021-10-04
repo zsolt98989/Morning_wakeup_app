@@ -8,31 +8,31 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Button x:Name="news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE774;" FontSize="50" Margin="539,166,0,0" VerticalAlignment="Top" Width="211" Click="news_button_Click"/>
-        <Button x:Name="next_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" FontSize="50" Margin="797,166,0,0" VerticalAlignment="Top" Click="next_news_button_Click"/>
-        <Button x:Name="prev_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" FontSize="50" Margin="422,166,0,0" VerticalAlignment="Top" Click="prev_news_button_Click"/>
+        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button x:Name="news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE774;" FontSize="50" VerticalAlignment="Top" Width="211" Click="news_button_Click" Margin="521,91,0,0"/>
+        <Button x:Name="next_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" FontSize="50" VerticalAlignment="Top" Click="next_news_button_Click" Margin="762,91,0,0"/>
+        <Button x:Name="prev_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" FontSize="50" VerticalAlignment="Top" Click="prev_news_button_Click" Margin="423,91,0,0"/>
         <Button x:Name="close_news_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" Margin="1425,0,0,0" VerticalAlignment="Top" Height="75" Width="75" Click="close_news_page_button_Click"/>
 
-        <Image x:Name="news_imageurl1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,350,0,0" Height="150" Width="150"></Image>
-        <TextBlock x:Name="news_date1" HorizontalAlignment="Left" Margin="400,350,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="175"/>
-        <TextBlock x:Name="news_title1" HorizontalAlignment="Left" Margin="600,350,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="172"/>
-        <TextBlock x:Name="news_author1" HorizontalAlignment="Left" Margin="800,350,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="143"/>
-        <TextBlock x:Name="news_description1" HorizontalAlignment="Left" Margin="1000,350,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="478"/>
+        <Image x:Name="news_imageurl1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="122,160,0,0" Height="150" Width="133"></Image>
+        <TextBlock x:Name="news_date1" HorizontalAlignment="Left" Margin="300,160,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="155"/>
+        <TextBlock x:Name="news_title1" HorizontalAlignment="Left" Margin="477,160,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="153"/>
+        <TextBlock x:Name="news_author1" HorizontalAlignment="Left" Margin="655,160,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="127"/>
+        <TextBlock x:Name="news_description1" HorizontalAlignment="Left" Margin="833,160,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="425"/>
 
-        <Image x:Name="news_imageurl2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,550,0,0" Height="150" Width="150"></Image>
-        <TextBlock x:Name="news_date2" HorizontalAlignment="Left" Margin="400,550,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="175"/>
-        <TextBlock x:Name="news_title2" HorizontalAlignment="Left" Margin="600,550,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="172"/>
-        <TextBlock x:Name="news_author2" HorizontalAlignment="Left" Margin="800,550,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="143"/>
-        <TextBlock x:Name="news_description2" HorizontalAlignment="Left" Margin="1000,550,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="478"/>
+        <Image x:Name="news_imageurl2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="122,360,0,0" Height="150" Width="133"></Image>
+        <TextBlock x:Name="news_date2" HorizontalAlignment="Left" Margin="300,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="155"/>
+        <TextBlock x:Name="news_title2" HorizontalAlignment="Left" Margin="477,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="153"/>
+        <TextBlock x:Name="news_author2" HorizontalAlignment="Left" Margin="655,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="127"/>
+        <TextBlock x:Name="news_description2" HorizontalAlignment="Left" Margin="833,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="425"/>
 
-        <Image x:Name="news_imageurl3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,750,0,0" Height="150" Width="150"></Image>
-        <TextBlock x:Name="news_date3" HorizontalAlignment="Left" Margin="400,750,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="175"/>
-        <TextBlock x:Name="news_title3" HorizontalAlignment="Left" Margin="600,750,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="172"/>
-        <TextBlock x:Name="news_author3" HorizontalAlignment="Left" Margin="800,750,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="143"/>
-        <TextBlock x:Name="news_description3" HorizontalAlignment="Left" Margin="1000,750,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="478"/>
+        <Image x:Name="news_imageurl3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="122,539,0,0" Height="150" Width="133"></Image>
+        <TextBlock x:Name="news_date3" HorizontalAlignment="Left" Margin="300,539,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="155"/>
+        <TextBlock x:Name="news_title3" HorizontalAlignment="Left" Margin="477,539,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="153"/>
+        <TextBlock x:Name="news_author3" HorizontalAlignment="Left" Margin="655,539,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="127"/>
+        <TextBlock x:Name="news_description3" HorizontalAlignment="Left" Margin="833,539,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="138" Width="425"/>
 
-        <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="423,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
+        <TextBox x:Name="news_search_input_tb" HorizontalAlignment="Left" Margin="422,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
     </Grid>
 
 </Page>
