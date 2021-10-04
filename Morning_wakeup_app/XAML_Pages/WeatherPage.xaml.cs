@@ -34,6 +34,8 @@ namespace Morning_wakeup_app.XAML_Pages
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             MainPage.Title.Text = "Weather Page";
+            weather_button_Click(this, new RoutedEventArgs());
+            forecast_button_Click(this, new RoutedEventArgs());
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {

@@ -55,6 +55,9 @@ namespace Morning_wakeup_app.XAML_Pages
 
             mplayer.AutoPlay = false;
             mplayer.Source = MediaSource.CreateFromStorageFile(file);
+
+            is_playing = true;
+            mplayer.Play();
         }
         private async void Get_File_Names()
         {
@@ -87,7 +90,7 @@ namespace Morning_wakeup_app.XAML_Pages
                 currently_playing_index += 1;
                 Load_files();
             }
-                
+
         }
         private void prev_music_button_Click(object sender, RoutedEventArgs e)
         {

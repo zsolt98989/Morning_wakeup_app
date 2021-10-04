@@ -35,6 +35,7 @@ namespace Morning_wakeup_app.XAML_Pages
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             MainPage.Title.Text = "News Page";
+            news_button_Click(this, new RoutedEventArgs());
         }
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
