@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Button x:Name="play_button" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" FontSize="50" Margin="694,253,0,0" VerticalAlignment="Top" Click="play_button_Click_1"/>
         <TextBlock x:Name="currently_playing_tb" HorizontalAlignment="Left" Margin="553,118,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="346"/>
         <Button x:Name="next_music_button" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" FontSize="50" Margin="827,253,0,0" VerticalAlignment="Top" Click="next_music_button_Click"/>

@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Image Grid.RowSpan="3" Stretch="None" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Button x:Name="weather_button" Content="Get current weather informations" Margin="341,127,0,0" VerticalAlignment="Top" Click="weather_button_Click"/>
         <TextBlock x:Name="weather_textblock" HorizontalAlignment="Left" Margin="289,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="235" Width="342" RenderTransformOrigin="0.504,0.531"/>
         <Image x:Name="Weather_img" HorizontalAlignment="Left" Height="100" Margin="650,170,0,0" VerticalAlignment="Top" Width="100"/>

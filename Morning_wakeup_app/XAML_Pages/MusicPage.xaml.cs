@@ -41,6 +41,8 @@ namespace Morning_wakeup_app.XAML_Pages
             is_playing = false;
             Get_File_Names();
             Load_files();
+
+            MainPage.Title.Text = "Music Page";
         }
 
         private async void Load_files()
@@ -98,8 +100,7 @@ namespace Morning_wakeup_app.XAML_Pages
         private void close_music_page_button_Click(object sender, RoutedEventArgs e)
         {
             mplayer.Pause();
-            Frame.Navigate(typeof(MainPage), null, new DrillInNavigationTransitionInfo());
-            Frame.Content = null;
+            Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
         }
     }
 }

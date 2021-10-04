@@ -32,6 +32,8 @@ namespace Morning_wakeup_app.XAML_Pages
 
             ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            MainPage.Title.Text = "Weather Page";
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
@@ -48,8 +50,7 @@ namespace Morning_wakeup_app.XAML_Pages
         }
         private void close_weather_page_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), null, new DrillInNavigationTransitionInfo());
-            Frame.Content = null;
+            Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
         }
         private async void forecast_button_Click(object sender, RoutedEventArgs e)
         {

@@ -33,6 +33,8 @@ namespace Morning_wakeup_app.XAML_Pages
 
             ApplicationView.PreferredLaunchViewSize = new Size(1920, 1080);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            MainPage.Title.Text = "News Page";
         }
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
@@ -68,8 +70,7 @@ namespace Morning_wakeup_app.XAML_Pages
         }
         private void close_news_page_button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), null, new DrillInNavigationTransitionInfo());
-            Frame.Content = null;
+            Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
         }
         private void fill_news_tables()
         {

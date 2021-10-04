@@ -26,7 +26,8 @@ namespace Morning_wakeup_app
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        DispatcherTimer Second_timer = new DispatcherTimer();
+        static public DispatcherTimer Second_timer = new DispatcherTimer();
+        static public TextBlock Title = new TextBlock();
         public MainPage()
         {
             this.InitializeComponent();
@@ -37,14 +38,23 @@ namespace Morning_wakeup_app
             Second_timer.Tick += Second_timer_Tick;
             Second_timer.Interval = new TimeSpan(0, 0, 1);
             Second_timer.Start();
-        }
 
+            Title.FontFamily = new FontFamily("/Assets/Fonts/Highman.ttf#Highman Trial");
+            Title.FontSize = 70;
+            Title.Margin = new Thickness(120, 0, 0, 0);
+            Title.HorizontalAlignment = HorizontalAlignment.Center;
+            Title.VerticalAlignment = VerticalAlignment.Bottom;
+            Title.Text = "";
+            Title.Height = 60;
+            Title.Width = 350;
+            Title.TextAlignment = TextAlignment.Center;
+            maingrid.Children.Add(Title);
+
+            frame.Navigate(typeof(InfoPage), null, new SuppressNavigationTransitionInfo());
+        }
         private void Second_timer_Tick(object sender, object e)
         {
             time_tb.Text = DateTime.Now.ToString("HH:mm:ss");
-            secondHand.Angle = DateTime.Now.Second * 6;
-            minuteHand.Angle = DateTime.Now.Minute * 6;
-            hourHand.Angle = (DateTime.Now.Hour * 30);
         }
         private void testButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,28 +62,27 @@ namespace Morning_wakeup_app
         }
         private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            frame.Content = null;
             if (WeatherListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Navigate(typeof(WeatherPage), null, new SuppressNavigationTransitionInfo());
+                frame.Navigate(typeof(WeatherPage), null, new EntranceNavigationTransitionInfo());
             }
             else if (NewsListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Navigate(typeof(NewsPage), null, new SuppressNavigationTransitionInfo());
+                frame.Navigate(typeof(NewsPage), null, new EntranceNavigationTransitionInfo());
             }
             else if (MediaListBoxItem.IsSelected)
             {
-                frame.Navigate(typeof(MusicPage), null, new SuppressNavigationTransitionInfo());
+                frame.Navigate(typeof(MusicPage), null, new EntranceNavigationTransitionInfo());
             }
             else if (NoteListBoxItem.IsSelected)
             {
                 if (MusicPage.mplayer != null)
                     MusicPage.mplayer.Pause();
-                frame.Navigate(typeof(NotesPage), null, new SuppressNavigationTransitionInfo());
+                frame.Navigate(typeof(NotesPage), null, new EntranceNavigationTransitionInfo());
             }
         }
     }
