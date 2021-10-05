@@ -40,10 +40,16 @@ namespace Morning_wakeup_app.XAML_Pages
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
             var flag = await Current_weather.GetWeatherInformations();
-            string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Current_weather.weather_reports.weather[0].icon);
-            Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
+            try
+            {
+                string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Current_weather.weather_reports.weather[0].icon);
+                Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
+                weather_textblock.Text = Current_weather.weather_reports.name + "\n" + Current_weather.weather_reports.main.temp + " C " + "\n" + Current_weather.weather_reports.main.feels_like + " C" + "\n" + Current_weather.weather_reports.main.humidity + " %" + "\n" + Current_weather.weather_reports.main.pressure + " Pa" + "\n" + Current_weather.weather_reports.weather[0].description;
+            }
+            catch (Exception ex)
+            {
 
-            weather_textblock.Text = Current_weather.weather_reports.name + "\n" + Current_weather.weather_reports.main.temp + " C " + "\n" + Current_weather.weather_reports.main.feels_like + " C" + "\n" + Current_weather.weather_reports.main.humidity + " %" + "\n" + Current_weather.weather_reports.main.pressure + " Pa" + "\n" + Current_weather.weather_reports.weather[0].description;
+            }
         }
         private void weather_search_input_tb_TextChanged(object sender, TextChangedEventArgs e)
         {
