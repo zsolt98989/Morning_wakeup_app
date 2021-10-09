@@ -34,9 +34,11 @@ namespace Morning_wakeup_app.Classes
         public async static Task<bool> ConvertCityToCoordinates(string cityName)
         {
             var http2 = new HttpClient();
-            string url2 = String.Format("http://api.openweathermap.org/geo/1.0/direct?q={0}&appid=fddc3f024e2f2d470a0582adfc97d810", cityName);
+            string url2 = String.Format("http://api.openweathermap.org/geo/1.0/direct?q={0}&limit=1&appid=fddc3f024e2f2d470a0582adfc97d810", cityName);
             var response2 = await http2.GetAsync(url2);
             var result2 = await response2.Content.ReadAsStringAsync();
+            result2 = result2.Remove(0, 1);
+            result2 = result2.Remove(result2.Length - 1, 1);
             var serializer2 = new DataContractJsonSerializer(typeof(Root2));
             var ms2 = new MemoryStream(Encoding.UTF8.GetBytes(result2));
             var data2 = JsonConvert.DeserializeObject<Root2>(result2);
