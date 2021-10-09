@@ -34,12 +34,13 @@ namespace Morning_wakeup_app.XAML_Pages
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             MainPage.Title.Text = "Weather Page";
-            weather_button_Click(this, new RoutedEventArgs());
-            forecast_button_Click(this, new RoutedEventArgs());
+            //weather_button_Click(this, new RoutedEventArgs());
+            //forecast_button_Click(this, new RoutedEventArgs());
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
             var flag = await Current_weather.GetWeatherInformations();
+            var flag2 = await Weather_forecast.ConvertCityToCoordinates(weather_search_input_tb.Text);
             try
             {
                 string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Current_weather.weather_reports.weather[0].icon);
