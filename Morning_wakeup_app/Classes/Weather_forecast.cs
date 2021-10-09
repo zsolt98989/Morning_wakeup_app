@@ -34,6 +34,8 @@ namespace Morning_wakeup_app.Classes
         public async static Task<bool> ConvertCityToCoordinates(string cityName)
         {
             var http2 = new HttpClient();
+            if (cityName == "")
+                cityName = "Budapest";
             string url2 = String.Format("http://api.openweathermap.org/geo/1.0/direct?q={0}&limit=1&appid=fddc3f024e2f2d470a0582adfc97d810", cityName);
             var response2 = await http2.GetAsync(url2);
             var result2 = await response2.Content.ReadAsStringAsync();
