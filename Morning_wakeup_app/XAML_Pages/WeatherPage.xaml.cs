@@ -46,6 +46,7 @@ namespace Morning_wakeup_app.XAML_Pages
                 forecast_slider.Value += 1;
             else
                 forecast_slider.Value = 1;
+            forecast_slidervalue.Text = forecast_slider.Value.ToString() + " hour(s)";
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {

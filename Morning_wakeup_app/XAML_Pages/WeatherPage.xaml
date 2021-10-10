@@ -27,18 +27,21 @@
 
         <TextBox x:Name="weather_search_input_tb" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,30,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type here the city name" TextChanged="weather_search_input_tb_TextChanged"/>
 
-        <TextBlock x:Name="weather_textblock_name" Grid.Row="1" Grid.ColumnSpan="2" FontSize="50" HorizontalAlignment="Center" Margin="0,30,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="weather" Grid.Row="1" Grid.Column="2" FontSize="30" HorizontalAlignment="Left" Margin="100,100,0,0" Text="Today's weather:" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="weather_textblock_name" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2" FontSize="50" HorizontalAlignment="Center" Margin="0,30,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
         <TextBlock x:Name="weather_textblock_temp" Grid.Row="1" Grid.ColumnSpan="2" FontSize="40" HorizontalAlignment="Center" Margin="0,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBlock x:Name="weather_textblock_tempfeels" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="0,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBlock x:Name="weather_textblock_image" Grid.Row="1" Grid.ColumnSpan="2" FontSize="15" HorizontalAlignment="Center" Margin="0,0,700,10" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" TextAlignment="Center"/>
         <TextBlock x:Name="weather_textblock" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="700,0,0,20" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" TextAlignment="Left"/>
 
+        <TextBlock x:Name="forecast" Grid.Row="2" Grid.Column="2" FontSize="30" HorizontalAlignment="Left" Margin="100,60,0,0" Text="Weather forecast (next 48 hours):" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
         <TextBlock x:Name="forecast_textblock_temp" Grid.Row="2" Grid.ColumnSpan="2" FontSize="40" HorizontalAlignment="Center" Margin="0,30,0,80" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Width="200"/>
         <TextBlock x:Name="forecast_textblock_tempfeels" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="0,100,0,80" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Width="300"/>
         <TextBlock x:Name="forecast_textblock_image" Grid.Row="2" Grid.ColumnSpan="2" FontSize="15" HorizontalAlignment="Center" Margin="0,160,700,80" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBlock x:Name="forecast_textblock" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="850,50,0,80" Text="" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Left" Width="300" />
 
         <TextBlock x:Name="forecast_slidertext" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,40" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" TextAlignment="Center" />
+        <TextBlock x:Name="forecast_slidervalue" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,100" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" TextAlignment="Center" />
         <Slider x:Name="forecast_slider" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Width="700" Height="50" TickFrequency="1" ValueChanged="forecast_slider_ValueChanged" Maximum="48" Minimum="1" Value="1"/>
     </Grid>
 </Page>
