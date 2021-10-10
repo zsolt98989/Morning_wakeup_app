@@ -14,8 +14,8 @@ namespace Morning_wakeup_app.Classes
     {
         public static Root weather_forecasts;
         public static Root2 citys;
-        static public double lon = 19.040236;
-        static public double lat = 47.497913;
+        static public double lon;
+        static public double lat;
 
         public async static Task<bool> GetWeatherForecastInformations()
         {

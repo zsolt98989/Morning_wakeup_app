@@ -24,11 +24,11 @@
         </Grid.ColumnDefinitions>
 
         <Image Grid.RowSpan="5" Grid.ColumnSpan="5" Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <TextBox x:Name="news_search_input_tb" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,20,0,0" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE774;" FontSize="50" VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Center" Width="211" Click="news_button_Click"/>
-        <Button Grid.Row="0" Grid.Column="3" x:Name="next_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" FontSize="50" VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Left" Click="next_news_button_Click"/>
-        <Button Grid.Row="0" Grid.Column="1" x:Name="prev_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" FontSize="50" VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Right" Click="prev_news_button_Click"/>
-        <Button Grid.Row="0" Grid.Column="4" x:Name="close_news_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Right" Height="75" Width="75" Click="close_news_page_button_Click"/>
+        <TextBox x:Name="news_search_input_tb" Grid.Row="0" Grid.ColumnSpan="5" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,20,0,0" PlaceholderText="Type here to list the news by" InputScope="Default" TextChanged="news_search_input_tb_TextChanged"/>
+        <Button Grid.Row="0" Grid.ColumnSpan="5" x:Name="news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE774;" FontSize="50" VerticalAlignment="Center" Margin="0,30,0,0" HorizontalAlignment="Center" Width="200" Click="news_button_Click"/>
+        <Button Grid.Row="0" Grid.ColumnSpan="5" x:Name="next_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72A;" FontSize="50" VerticalAlignment="Center" Margin="300,30,0,0" HorizontalAlignment="Center" Click="next_news_button_Click"/>
+        <Button Grid.Row="0" Grid.ColumnSpan="5" x:Name="prev_news_button" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;" FontSize="50" VerticalAlignment="Center" Margin="0,30,300,0" HorizontalAlignment="Center" Click="prev_news_button_Click"/>
+        <Button Grid.Row="0" Grid.Column="5" x:Name="close_news_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Right" Height="75" Width="75" Click="close_news_page_button_Click"/>
 
         <Image Grid.Row="1" Grid.Column="0" x:Name="news_imageurl1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="170" Width="250"></Image>
         <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,55,0,0" x:Name="news_date1" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
