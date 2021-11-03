@@ -120,6 +120,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Current_weather.cs" />
+    <Compile Include="Classes\NoteGroupModel.cs" />
+    <Compile Include="Classes\NoteModel.cs" />
     <Compile Include="Classes\Weather_forecast.cs" />
     <Compile Include="XAML_Pages\InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>
@@ -131,6 +133,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XAML_Pages\MusicPage.xaml.cs">
       <DependentUpon>MusicPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAML_Pages\Note.xaml.cs">
+      <DependentUpon>Note.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XAML_Pages\NoteGroup.xaml.cs">
+      <DependentUpon>NoteGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="XAML_Pages\NotesPage.xaml.cs">
       <DependentUpon>NotesPage.xaml</DependentUpon>
@@ -175,6 +183,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="XAML_Pages\MusicPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML_Pages\Note.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML_Pages\NoteGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

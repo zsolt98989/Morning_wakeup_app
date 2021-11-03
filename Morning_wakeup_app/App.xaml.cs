@@ -30,6 +30,14 @@ namespace Morning_wakeup_app
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            NoteGroupModel = new NoteGroupModel();
+
+        }
+
+        public NoteGroupModel NoteGroupModel
+        {
+            get;
+            private set;
         }
 
         /// <summary>

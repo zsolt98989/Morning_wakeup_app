@@ -24,6 +24,9 @@ namespace Morning_wakeup_app.XAML_Pages
     /// </summary>
     public sealed partial class NotesPage : Page
     {
+        private NoteGroupModel _noteGroupModel { get; set; }
+        public NoteGroup FocusedGroup;
+
         public NotesPage()
         {
             this.InitializeComponent();
@@ -32,10 +35,29 @@ namespace Morning_wakeup_app.XAML_Pages
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             MainPage.Title.Text = "Notes Page";
+
+            App app = (App)Application.Current;
+            _noteGroupModel = app.NoteGroupModel;
+
+
         }
         private void close_notes_page_button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(InfoPage), null, new EntranceNavigationTransitionInfo());
+        }
+
+        public NoteGroup CreateNoteGroup()
+        {
+            // Create the new note
+            NoteGroup newNoteGroup = new NoteGroup();
+            _noteGroupModel.NoteGroups.Add(newNoteGroup);
+            return newNoteGroup;
+        }
+
+        private void createNewNoteGroupButton(object sender, RoutedEventArgs e)
+        {
+            FocusedGroup = CreateNoteGroup();
+
         }
     }
 }

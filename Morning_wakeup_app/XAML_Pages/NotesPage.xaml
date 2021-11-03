@@ -10,5 +10,16 @@
     <Grid>
         <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Button x:Name="close_notes_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" Margin="1414,10,0,0" VerticalAlignment="Top" Height="61" Width="76" Click="close_notes_page_button_Click"/>
+
+        <StackPanel Width="380" Height="32" Orientation="Horizontal">
+            <Button x:Name="CreateNewNoteGroupButton" Content="Create" Width="379" Height="32"  Foreground="White" Background="#FF0000" Click="createNewNoteGroupButton"  />
+        </StackPanel>
+
+        <ItemsControl ItemsSource="{x:Bind _noteGroupModel.NoteGroups}">
+
+            <StackPanel x:Name="StackPanelNote" Margin="219,132,82,90" ></StackPanel>
+
+        </ItemsControl>
     </Grid>
+
 </Page>
