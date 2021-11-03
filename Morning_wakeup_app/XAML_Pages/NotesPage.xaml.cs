@@ -16,7 +16,6 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-// Push trial
 
 namespace Morning_wakeup_app.XAML_Pages
 {
