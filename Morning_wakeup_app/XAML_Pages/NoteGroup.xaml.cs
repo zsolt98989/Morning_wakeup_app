@@ -23,11 +23,11 @@ namespace Morning_wakeup_app
         //private List<Note> _noteList;
         public NoteModel _noteModel { get; private set; }
 
-
-        public NoteGroup()
+        public NoteGroup(String _tempTextBoxText)
         {
             this.InitializeComponent();
             _noteModel = new NoteModel();
+            tempTextBox.Text = _tempTextBoxText;
 
             //_noteList = new List<Note>();
         }

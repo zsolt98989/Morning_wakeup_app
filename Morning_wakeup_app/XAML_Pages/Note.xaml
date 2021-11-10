@@ -5,26 +5,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="46" Width="489">
 
     <Grid>
-        <Border x:Name="DropShadow" Width="400" Height="300" Opacity="0.3" RenderTransformOrigin="0,0" BorderThickness="1,1,8,8" BorderBrush="Black" CornerRadius="8" Grid.ColumnSpan="2"   >
+        <Border x:Name="DropShadow"  Opacity="0.3" RenderTransformOrigin="0,0" BorderThickness="1,1,8,8" CornerRadius="8" Grid.ColumnSpan="2"   >
             <Border.RenderTransform>
                 <CompositeTransform ScaleX="1.02" ScaleY="1.02"  />
             </Border.RenderTransform>
         </Border>
-        <Grid x:Name="NoteTopSection" Grid.ColumnSpan="2">
-            <TextBlock x:Name="noteTitle" HorizontalAlignment="Center" Margin="48,7,88,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="29"  Foreground="Black" FontSize="18.667" FontWeight="Bold"/>
+        <Button x:Name="buttonClose"  Content="&#x2716;" VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Segoe UI Symbol" FontSize="18.667" RenderTransformOrigin="0,0" Height="36" Background="#00F6E8BF" Click="buttonCloseClick" />
 
-            <Button x:Name="buttonClose"  Content="&#x2716;"   HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Segoe UI Symbol" FontSize="18.667" RenderTransformOrigin="0,0" Height="36" Background="#00F6E8BF" Click="buttonCloseClick" />
-        </Grid>
         <Grid x:Name="NoteBottomSection" Grid.ColumnSpan="2" >
 
-            <TextBox x:Name="containerForNote" TextWrapping="Wrap"   Margin="10,52 ,0,0"  VerticalAlignment="Top" Height="199" Width="380"
-                Foreground="Black" SelectionHighlightColor="#FF6588A4" FontSize="21.333" BorderThickness="0"  Text="{Binding Path=NoteText, Mode=TwoWay}"
-                AcceptsReturn="True" Background="#FFF6E8BF"/>
+            <CheckBox Content="" Width="31" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="containerForNote" TextWrapping="Wrap"   VerticalAlignment="Top" HorizontalAlignment="Left" Height="42"
+                Foreground="Black" SelectionHighlightColor="#FF6588A4" FontSize="21.333" BorderThickness="0"  Text="{Binding NoteText, Mode=TwoWay}"
+                AcceptsReturn="True" Background="#FFF6E8BF" Width="284" Margin="39,0,0,0"/>
+            <Button Content="Dictate" Height="42" Margin="346,0,0,0" VerticalAlignment="Top" Width="86" Click="dictateButtonClick"/>
         </Grid>
 
 
