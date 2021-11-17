@@ -35,7 +35,6 @@ namespace Morning_wakeup_app.XAML_Pages
     {
         private NoteGroupModel _noteGroupModel { get; set; }
         public NoteGroup FocusedGroup;
-        //private MainPage rootPage;
 
         // Speech Recognition elements
         private SpeechRecognizer speechRecognizer;
@@ -61,21 +60,19 @@ namespace Morning_wakeup_app.XAML_Pages
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //rootPage = this;
-
             // Prompt the user for permission to access the microphone. This request will only happen
             // once, it will not re-prompt if the user rejects the permission.           
             bool permissionGained = await AudioCapturePermissions.RequestMicrophonePermission();
             if (permissionGained)
             {
                 dictateButton.IsEnabled = true;
-                await InitializeRecognizer(SpeechRecognizer.SystemSpeechLanguage);
+                var language = new Windows.Globalization.Language("en-US");
+                await InitializeRecognizer(language);
             }
             else
             {
                 this.noteBox.Text = "Permission to access capture resources was not given by the user, reset the application setting in Settings->Privacy->Microphone.";
                 dictateButton.IsEnabled = false;
-                //cbLanguageSelection.IsEnabled = false;
             }
 
         }
@@ -85,10 +82,8 @@ namespace Morning_wakeup_app.XAML_Pages
             if (speechRecognizer != null)
             {
                 // cleanup prior to re-initializing this scenario.
-                //speechRecognizer.StateChanged -= SpeechRecognizer_StateChanged;
                 speechRecognizer.ContinuousRecognitionSession.Completed -= ContinuousRecognitionSession_Completed;
                 speechRecognizer.ContinuousRecognitionSession.ResultGenerated -= ContinuousRecognitionSession_ResultGenerated;
-                //speechRecognizer.HypothesisGenerated -= SpeechRecognizer_HypothesisGenerated;
 
                 this.speechRecognizer.Dispose();
                 this.speechRecognizer = null;
@@ -96,17 +91,13 @@ namespace Morning_wakeup_app.XAML_Pages
 
             this.speechRecognizer = new SpeechRecognizer(recognizerLanguage);
 
-            // Provide feedback to the user about the state of the recognizer. This can be used to provide visual feedback in the form
-            // of an audio indicator to help the user understand whether they're being heard.
-            //speechRecognizer.StateChanged += SpeechRecognizer_StateChanged;
-
+         
             // Apply the dictation topic constraint to optimize for dictated freeform speech.
             var dictationConstraint = new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario.Dictation, "dictation");
             speechRecognizer.Constraints.Add(dictationConstraint);
             SpeechRecognitionCompilationResult result = await speechRecognizer.CompileConstraintsAsync();
             if (result.Status != SpeechRecognitionResultStatus.Success)
             {
-                //rootPage.NotifyUser("Grammar Compilation Failed: " + result.Status.ToString(), NotifyType.ErrorMessage);
                 dictateButton.IsEnabled = false;
             }
 
@@ -116,7 +107,6 @@ namespace Morning_wakeup_app.XAML_Pages
             
             speechRecognizer.ContinuousRecognitionSession.Completed += ContinuousRecognitionSession_Completed;
             speechRecognizer.ContinuousRecognitionSession.ResultGenerated += ContinuousRecognitionSession_ResultGenerated;
-            //speechRecognizer.HypothesisGenerated += SpeechRecognizer_HypothesisGenerated;
         }
 
         /// <summary>
@@ -133,15 +123,12 @@ namespace Morning_wakeup_app.XAML_Pages
                     await this.speechRecognizer.ContinuousRecognitionSession.CancelAsync();
                     isListening = false;
                     dictateButtonTextbox.Text = " Dictate";
-                    //cbLanguageSelection.IsEnabled = true;
                 }
 
                 noteBox.Text = "";
 
                 speechRecognizer.ContinuousRecognitionSession.Completed -= ContinuousRecognitionSession_Completed;
                 speechRecognizer.ContinuousRecognitionSession.ResultGenerated -= ContinuousRecognitionSession_ResultGenerated;
-                //speechRecognizer.HypothesisGenerated -= SpeechRecognizer_HypothesisGenerated;
-                //speechRecognizer.StateChanged -= SpeechRecognizer_StateChanged;
 
                 this.speechRecognizer.Dispose();
                 this.speechRecognizer = null;
@@ -166,9 +153,7 @@ namespace Morning_wakeup_app.XAML_Pages
                 {
                     await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                     {
-                        //rootPage.NotifyUser("Automatic Time Out of Dictation", NotifyType.StatusMessage);
                         dictateButtonTextbox.Text = " Dictate";
-                        //cbLanguageSelection.IsEnabled = true;
                         noteBox.Text = dictatedTextBuilder.ToString();
                         isListening = false;
                     });
@@ -177,9 +162,7 @@ namespace Morning_wakeup_app.XAML_Pages
                 {
                     await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                     {
-                        //rootPage.NotifyUser("Continuous Recognition Completed: " + args.Status.ToString(), NotifyType.StatusMessage);
                         dictateButtonTextbox.Text = " Dictate";
-                        //cbLanguageSelection.IsEnabled = true;
                         isListening = false;
                     });
                 }
@@ -204,10 +187,7 @@ namespace Morning_wakeup_app.XAML_Pages
 
                 await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                 {
-                    //discardedTextBlock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-
                     noteBox.Text = dictatedTextBuilder.ToString();
-                    //btnClearText.IsEnabled = true;
                 });
             }
             else
@@ -224,25 +204,11 @@ namespace Morning_wakeup_app.XAML_Pages
                         discardedText = discardedText.Length <= 25 ? discardedText : (discardedText.Substring(0, 25) + "...");
 
                         noteBox.Text = "Discarded due to low/rejected Confidence: " + discardedText;
-                        //discardedTextBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
                     }
                 });
             }
         }
 
-        /*
-        /// <summary>
-        /// Provide feedback to the user based on whether the recognizer is receiving their voice input.
-        /// </summary>
-        /// <param name="sender">The recognizer that is currently running.</param>
-        /// <param name="args">The current state of the recognizer.</param>
-        private async void SpeechRecognizer_StateChanged(SpeechRecognizer sender, SpeechRecognizerStateChangedEventArgs args)
-        {
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => {
-                this.NotifyUser(args.State.ToString(), NotifyType.StatusMessage);
-            });
-        }
-        */
 
         public class AudioCapturePermissions
         {
@@ -310,10 +276,8 @@ namespace Morning_wakeup_app.XAML_Pages
                 // This prevents an exception from occurring.
                 if (speechRecognizer.State == SpeechRecognizerState.Idle)
                 {
+                    noteBox.Text = "Dictate your note!";
                     dictateButtonTextbox.Text = " Stop Dictation";       
-                    //cbLanguageSelection.IsEnabled = false;
-                    //hlOpenPrivacySettings.Visibility = Visibility.Collapsed;
-                    //discardedTextBlock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
                     try
                     {
@@ -322,23 +286,8 @@ namespace Morning_wakeup_app.XAML_Pages
                     }
                     catch (Exception ex)
                     {
-                        /*
-                        if ((uint)ex.HResult == HResultPrivacyStatementDeclined)
-                        {
-                            // Show a UI link to the privacy settings.
-                            hlOpenPrivacySettings.Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            var messageDialog = new Windows.UI.Popups.MessageDialog(ex.Message, "Exception");
-                            await messageDialog.ShowAsync();
-                        }
-                        */
-
                         isListening = false;
                         dictateButtonTextbox.Text = " Dictate";
-                        //cbLanguageSelection.IsEnabled = true;
-
                     }
                 }
             }
@@ -346,7 +295,6 @@ namespace Morning_wakeup_app.XAML_Pages
             {
                 isListening = false;
                 dictateButtonTextbox.Text = " Dictate";
-                //cbLanguageSelection.IsEnabled = true;
 
                 if (speechRecognizer.State != SpeechRecognizerState.Idle)
                 {
@@ -373,7 +321,6 @@ namespace Morning_wakeup_app.XAML_Pages
 
         private void deleteTextButtonClick(object sender, RoutedEventArgs e)
         {
-            deleteTextButton.IsEnabled = false;
             dictatedTextBuilder.Clear();
             noteBox.Text = "";
         }
@@ -386,7 +333,7 @@ namespace Morning_wakeup_app.XAML_Pages
         public NoteGroup CreateNoteGroup()
         {
             // Create the new note
-            NoteGroup newNoteGroup = new NoteGroup(dictatedTextBuilder.ToString());
+            NoteGroup newNoteGroup = new NoteGroup(noteBox.Text);
             _noteGroupModel.NoteGroups.Add(newNoteGroup);
             return newNoteGroup;
         }

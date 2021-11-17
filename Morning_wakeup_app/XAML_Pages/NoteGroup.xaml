@@ -7,25 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
 
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="304" Width="444">
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" Width="1100">
+
 
     <Grid>
-        <Border x:Name="DropShadow" Opacity="0.3" RenderTransformOrigin="0,0" BorderThickness="1,1,8,8" BorderBrush="Black" CornerRadius="8" Grid.ColumnSpan="2"   >
+        <Border x:Name="DropShadow" Opacity="0.3" RenderTransformOrigin="0,0" BorderThickness="1,1,8,8" CornerRadius="8" Grid.ColumnSpan="2"   >
             <Border.RenderTransform>
                 <CompositeTransform ScaleX="1.02" ScaleY="1.02"  />
             </Border.RenderTransform>
         </Border>
-        <Grid x:Name="NoteTopSection" Grid.ColumnSpan="2">
-            <Button x:Name="deleteNoteGroupButton" Content="&#x2716;" Foreground="White" Background="#FFAAA4A4" Click="deleteNoteGroupButtonClick" VerticalAlignment="Top"  HorizontalAlignment="Left" />
-            <Button x:Name="showNoteButton" Content="Create" Foreground="White" Background="#FFAAA4A4" Click="showNoteButtonClick" VerticalAlignment="Top" Margin="63,0,0,0"  />
-            <TextBox x:Name="tempTextBox" HorizontalAlignment="Center" Height="111" TextWrapping="Wrap" VerticalAlignment="Center" Width="339"/>
-        </Grid>
-        <Grid x:Name="NoteBottomSection" Grid.ColumnSpan="2" >
-            <StackPanel>
-                <ItemsControl ItemsSource="{x:Bind _noteModel.Notes}">           
 
-                </ItemsControl>
-            </StackPanel>
-        </Grid>
+        <Button x:Name="deleteNoteGroupButton" Content="&#x2716;" Foreground="White" Background="#FFAAA4A4" Click="deleteNoteGroupButtonClick" VerticalAlignment="Center"  HorizontalAlignment="Right" />
+        <TextBox x:Name="tempTextBox" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Center" Width="1028"/>
+
     </Grid>
 </UserControl>
+    
