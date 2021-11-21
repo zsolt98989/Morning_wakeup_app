@@ -7,8 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
 
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" Width="1100">
-
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" Width="1100">
 
     <Grid>
         <Border x:Name="DropShadow" Opacity="0.3" RenderTransformOrigin="0,0" BorderThickness="1,1,8,8" CornerRadius="8" Grid.ColumnSpan="2"   >
@@ -18,7 +17,7 @@
         </Border>
 
         <Button x:Name="deleteNoteGroupButton" Content="&#x2716;" Foreground="White" Background="#FFAAA4A4" Click="deleteNoteGroupButtonClick" VerticalAlignment="Center"  HorizontalAlignment="Right" />
-        <TextBox x:Name="tempTextBox" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Center" Width="1028"/>
+        <TextBox x:Name="tempTextBox" HorizontalAlignment="Left" IsReadOnly="True" FontSize="16" Height="50" TextWrapping="Wrap" VerticalAlignment="Center" Width="1028"/>
 
     </Grid>
 </UserControl>

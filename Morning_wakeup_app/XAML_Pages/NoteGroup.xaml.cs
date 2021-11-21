@@ -20,16 +20,11 @@ namespace Morning_wakeup_app
 
     public partial class NoteGroup
     {
-        //private List<Note> _noteList;
-        public NoteModel _noteModel { get; private set; }
-
+      
         public NoteGroup(String _tempTextBoxText)
         {
             this.InitializeComponent();
-            _noteModel = new NoteModel();
             tempTextBox.Text = _tempTextBoxText;
-
-            //_noteList = new List<Note>();
         }
 
         public void OnDeleteNoteEvent()
@@ -44,12 +39,6 @@ namespace Morning_wakeup_app
             OnDeleteNoteEvent();
 
         }
-
-        private void showNoteButtonClick(object sender, RoutedEventArgs e)
-        {
-            Note newNote = new Note();
-            _noteModel.Notes.Add(newNote);
-
-        }
+ 
     }
 }
