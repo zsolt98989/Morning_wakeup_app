@@ -40,8 +40,9 @@ namespace Morning_wakeup_app.XAML_Pages
 
             weather_button_Click(this, new RoutedEventArgs());
         }
-        private void Second_timer_Tick(object sender, object e)
+        private async void Second_timer_Tick(object sender, object e)
         {
+            var flag = await Current_weather.GetWeatherInformations();
             if (forecast_slider.Value != 48)
                 forecast_slider.Value += 1;
             else
@@ -50,6 +51,7 @@ namespace Morning_wakeup_app.XAML_Pages
         }
         private async void weather_button_Click(object sender, RoutedEventArgs e)
         {
+            forecast_slider.Value = 1;
             var flag = await Current_weather.GetWeatherInformations();
             var flag3 = await Weather_forecast.ConvertCityToCoordinates(weather_search_input_tb.Text);
             Weather_forecast.lat = Weather_forecast.citys.lat;
@@ -59,7 +61,6 @@ namespace Morning_wakeup_app.XAML_Pages
             {
                 string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Current_weather.weather_reports.weather[0].icon);
                 Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
-                forecast_slider.Value = 1;
                 fill_weather_textblock();
                 fill_forecast_textblock();
             }

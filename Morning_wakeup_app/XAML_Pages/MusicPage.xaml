@@ -13,6 +13,6 @@
         <TextBlock x:Name="currently_playing_tb" HorizontalAlignment="Left" Margin="553,118,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="346"/>
         <Button x:Name="next_music_button" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" FontSize="50" Margin="827,253,0,0" VerticalAlignment="Top" Click="next_music_button_Click"/>
         <Button x:Name="prev_music_button" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" FontSize="50" Margin="552,253,0,0" VerticalAlignment="Top" Click="prev_music_button_Click"/>
-        <Button x:Name="close_music_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" Margin="1409,10,0,0" VerticalAlignment="Top" Height="64" Width="81" Click="close_music_page_button_Click"/>
+        <Button x:Name="close_music_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Right" Height="75" Width="75" Click="close_music_page_button_Click"/>
     </Grid>
 </Page>

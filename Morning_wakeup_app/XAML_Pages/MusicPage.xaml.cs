@@ -28,8 +28,8 @@ namespace Morning_wakeup_app.XAML_Pages
     {
         static public MediaPlayer mplayer;
         bool is_playing;
-        string[] fileEntries;
-        int currently_playing_index = 0;
+        public string[] fileEntries;
+        public int currently_playing_index = 0;
         public MusicPage()
         {
             this.InitializeComponent();
@@ -59,7 +59,7 @@ namespace Morning_wakeup_app.XAML_Pages
             is_playing = true;
             mplayer.Play();
         }
-        private async void Get_File_Names()
+        public async void Get_File_Names()
         {
             Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
             fileEntries = Directory.GetFiles(folder.Path);
