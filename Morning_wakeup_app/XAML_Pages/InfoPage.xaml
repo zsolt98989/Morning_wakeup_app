@@ -18,16 +18,16 @@
         </Grid.ColumnDefinitions>
         <Image Grid.ColumnSpan="2" Grid.RowSpan="2" Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-        <Button Grid.Row="0" Grid.Column="0"  FontSize="10" VerticalAlignment="Center" Margin="0,0,50,50" HorizontalAlignment="Center" Height="150" Width="300" Click="weather_tab_Click">
+        <Button Grid.Row="0" Grid.Column="0"  FontSize="10" VerticalAlignment="Center" Margin="0,0,50,50" HorizontalAlignment="Center" Height="150" Width="300" Click="weather_tab_Click" Background="#33FFFFFF">
             <TextBlock x:Name="weather_tab" Text="" TextAlignment="Start" FontSize="30" FontFamily="/Assets/Fonts/Highman.ttf#Highman Trial"/>
         </Button>
-        <Button Grid.Row="0" Grid.Column="1" FontSize="10" VerticalAlignment="Center" Margin="50,0,0,50" HorizontalAlignment="Center" Height="150" Width="300" Click="news_tab_Click">
+        <Button Grid.Row="0" Grid.Column="1" FontSize="10" VerticalAlignment="Center" Margin="50,0,0,50" HorizontalAlignment="Center" Height="150" Width="300" Click="news_tab_Click" Background="#33FFFFFF">
             <TextBlock x:Name="news_tab" Text="" TextAlignment="Start"  FontSize="15" FontFamily="/Assets/Fonts/Highman.ttf#Highman Trial"/>
         </Button>
-        <Button Grid.Row="1" Grid.Column="0" FontSize="10" VerticalAlignment="Center" Margin="0,50,50,0" HorizontalAlignment="Center" Height="150" Width="300" Click="music_tab_Click">
+        <Button Grid.Row="1" Grid.Column="0" FontSize="10" VerticalAlignment="Center" Margin="0,50,50,0" HorizontalAlignment="Center" Height="150" Width="300" Click="music_tab_Click" Background="#33FFFFFF">
             <TextBlock x:Name="music_tab" Text="" TextAlignment="Start"  FontSize="30" FontFamily="/Assets/Fonts/Highman.ttf#Highman Trial"/>
         </Button>
-        <Button Grid.Row="1" Grid.Column="1" FontSize="10" VerticalAlignment="Center" Margin="50,50,0,0" HorizontalAlignment="Center" Height="150" Width="300" Click="notes_tab_Click">
+        <Button Grid.Row="1" Grid.Column="1" FontSize="10" VerticalAlignment="Center" Margin="50,50,0,0" HorizontalAlignment="Center" Height="150" Width="300" Click="notes_tab_Click" Background="#33FFFFFF">
             <TextBlock x:Name="notes_tab" Text="" TextAlignment="Start"  FontSize="30" FontFamily="/Assets/Fonts/Highman.ttf#Highman Trial"/>
         </Button>
 
