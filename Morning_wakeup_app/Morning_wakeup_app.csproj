@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\MainPage\mainpage.jpg" />
+    <Content Include="Assets\Images\MusicPage\ezgif.com-gif-maker.mp4" />
     <Content Include="Assets\Music\B3nte &amp; B3VA - La La La %28Official Audio%29.mp3" />
     <Content Include="Assets\Music\RED BULL PILVAKER Szeptember végén %28Halott Pénz, Fluor, Deego, Singh Viki%29 Official Music Vide.mp3" />
     <Content Include="Assets\Music\YAMINA Neon Official Music Video.mp3" />
@@ -210,6 +211,7 @@
   <ItemGroup>
     <Content Include="Assets\Fonts\Highman.ttf" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

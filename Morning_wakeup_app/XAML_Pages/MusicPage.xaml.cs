@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
@@ -39,7 +40,6 @@ namespace Morning_wakeup_app.XAML_Pages
 
             mplayer = new MediaPlayer();
             is_playing = false;
-            Get_File_Names();
             Load_files();
 
             MainPage.Title.Text = "Music Page";
@@ -47,7 +47,7 @@ namespace Morning_wakeup_app.XAML_Pages
 
         private async void Load_files()
         {
-            this.Get_File_Names();
+            await this.Get_File_Names();
             currently_playing_tb.Text = fileEntries[currently_playing_index];
 
             Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
@@ -59,7 +59,7 @@ namespace Morning_wakeup_app.XAML_Pages
             is_playing = true;
             mplayer.Play();
         }
-        public async void Get_File_Names()
+        public async Task<bool> Get_File_Names()
         {
             Windows.Storage.StorageFolder folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Music");
             fileEntries = Directory.GetFiles(folder.Path);
@@ -69,6 +69,10 @@ namespace Morning_wakeup_app.XAML_Pages
             {
                 fileEntries[i] = fileEntries[i].Remove(0, length_dir);
             }
+            if (fileEntries.Count() != 0)
+                return true;
+            else
+                return false;
         }
         private void play_button_Click_1(object sender, RoutedEventArgs e)
         {
