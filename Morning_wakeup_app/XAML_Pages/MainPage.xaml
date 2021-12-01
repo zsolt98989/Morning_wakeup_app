@@ -12,11 +12,11 @@
             <RowDefinition Height="66" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Grid.RowSpan="2" Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Frame x:Name="frame_top" Background="White" Height="66"/>
-        <Frame x:Name="frame" Background="Transparent" Grid.Row="1"/>
-        <TextBlock x:Name="time_tb" FontSize="70" FontFamily="/Assets/Fonts/digital-7.ttf#Digital-7" Margin="120,0,0,0" HorizontalAlignment="Right"  Grid.Row="0" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="66" Width="250" TextAlignment="Center"/>
+        <Frame x:Name="frame" Margin="120,66,0,0" Background="Transparent" Grid.RowSpan="2"/>
+        <TextBlock x:Name="time_tb" FontSize="70" FontFamily="/Assets/Fonts/digital-7.ttf#Digital-7" Margin="120,0,10,0" HorizontalAlignment="Right"  Grid.Row="0" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="66" Width="250" TextAlignment="Right"/>
 
         <!-- Menu -->
         <RelativePanel Grid.RowSpan="2">

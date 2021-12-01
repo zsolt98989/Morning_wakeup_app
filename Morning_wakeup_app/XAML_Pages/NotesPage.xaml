@@ -8,7 +8,39 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Button x:Name="close_notes_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" Margin="1414,10,0,0" VerticalAlignment="Top" Height="61" Width="76" Click="close_notes_page_button_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.RowSpan="4" Grid.ColumnSpan="5" Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center">
+        </Image>
+        <Button Grid.Row="1" Grid.Column="4" x:Name="close_notes_page_button" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Right" Height="61" Width="76" Click="close_notes_page_button_Click"/>
+        
+        <Border Background="White" Grid.Row="1"  Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" Opacity="0.5" BorderThickness="2,2,2,2" BorderBrush="Black" CornerRadius="3" ></Border>
+
+        <TextBox x:Name="noteBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="120" TextWrapping="Wrap" FontSize="16" CornerRadius="3" BorderThickness="2" BorderBrush="Black" Background="#FDFDE8"/>
+
+        <StackPanel HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1"  VerticalAlignment="Top">
+            <Button x:Name="dictateButton" HorizontalAlignment="Stretch" Height="40"  Foreground="White" Click="dictateButtonClick" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Background="#BA92CF ">
+                <TextBlock x:Name="dictateButtonTextbox" Height="30" HorizontalAlignment="Stretch"  VerticalAlignment="Center" TextAlignment="Center" />
+            </Button>
+            <Button x:Name="deleteTextButton" Content="Delete Content"  HorizontalAlignment="Stretch" Height="40"  Foreground="White"  Background="#BA92CF "  VerticalAlignment="Top" Click="deleteTextButtonClick" CornerRadius="3" BorderThickness="1" BorderBrush="Black"/>
+            <Button x:Name="createNewNoteGroupButton" Content="Create"  HorizontalAlignment="Stretch" Height="40"  Foreground="White"  Background="#805B94" Click="createNewNoteGroupButtonClick" VerticalAlignment="Top"  CornerRadius="3" BorderThickness="1" BorderBrush="Black"/>
+        </StackPanel>
+        
+        <ListView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  ItemsSource="{x:Bind _noteGroupModel.NoteGroups}">
+
+        </ListView>
     </Grid>
+
 </Page>

@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="Morning_wakeup_app.NoteGroup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Morning_wakeup_app.XAML_Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" Width="900">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="830"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBox x:Name="tempTextBox" Grid.Column="0" IsReadOnly="True" FontSize="16" Height="50" TextWrapping="Wrap" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Background="#FDFDE8"/>
+        <Button x:Name="deleteNoteGroupButton" Grid.Column="1" Content="&#x2716;"  Height="50"  Foreground="White" Background="#805B94" Click="deleteNoteGroupButtonClick"   HorizontalAlignment="Left" CornerRadius="3" BorderThickness="2" BorderBrush="Black"/>
+
+    </Grid>
+</UserControl>

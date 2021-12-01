@@ -35,6 +35,7 @@ namespace Morning_wakeup_app.XAML_Pages
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             MainPage.Title.Text = "News Page";
+            news_button_Click(this, new RoutedEventArgs());
         }
         private async void news_button_Click(object sender, RoutedEventArgs e)
         {
@@ -74,21 +75,28 @@ namespace Morning_wakeup_app.XAML_Pages
         }
         private void fill_news_tables()
         {
-            news_date1.Text = News.news_articles[News.current_news_index].publishedAt.ToString();
-            news_title1.Text = News.news_articles[News.current_news_index].title;
-            news_author1.Text = News.news_articles[News.current_news_index].author;
-            news_description1.Text = News.news_articles[News.current_news_index].description;
-            news_imageurl1.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index].urlToImage, UriKind.Absolute));
-            news_date2.Text = News.news_articles[News.current_news_index + 1].publishedAt.ToString();
-            news_title2.Text = News.news_articles[News.current_news_index + 1].title;
-            news_author2.Text = News.news_articles[News.current_news_index + 1].author;
-            news_description2.Text = News.news_articles[News.current_news_index + 1].description;
-            news_imageurl2.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index + 1].urlToImage, UriKind.Absolute));
-            news_date3.Text = News.news_articles[News.current_news_index + 2].publishedAt.ToString();
-            news_title3.Text = News.news_articles[News.current_news_index + 2].title;
-            news_author3.Text = News.news_articles[News.current_news_index + 2].author;
-            news_description3.Text = News.news_articles[News.current_news_index + 2].description;
-            news_imageurl3.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index + 2].urlToImage, UriKind.Absolute));
+            try
+            {
+                news_date1.Text = News.news_articles[News.current_news_index].publishedAt.ToString();
+                news_title1.Text = News.news_articles[News.current_news_index].title;
+                news_author1.Text = News.news_articles[News.current_news_index].author;
+                news_description1.Text = News.news_articles[News.current_news_index].description;
+                news_imageurl1.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index].urlToImage, UriKind.Absolute));
+                news_date2.Text = News.news_articles[News.current_news_index + 1].publishedAt.ToString();
+                news_title2.Text = News.news_articles[News.current_news_index + 1].title;
+                news_author2.Text = News.news_articles[News.current_news_index + 1].author;
+                news_description2.Text = News.news_articles[News.current_news_index + 1].description;
+                news_imageurl2.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index + 1].urlToImage, UriKind.Absolute));
+                news_date3.Text = News.news_articles[News.current_news_index + 2].publishedAt.ToString();
+                news_title3.Text = News.news_articles[News.current_news_index + 2].title;
+                news_author3.Text = News.news_articles[News.current_news_index + 2].author;
+                news_description3.Text = News.news_articles[News.current_news_index + 2].description;
+                news_imageurl3.Source = new BitmapImage(new Uri(News.news_articles[News.current_news_index + 2].urlToImage, UriKind.Absolute));
+            }
+            catch(Exception e)
+            {
+                
+            }
         }
     }
 }
