@@ -7,18 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
 
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" Width="1100">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="50" Width="900">
 
     <Grid>
-        <Border x:Name="DropShadow" Opacity="0.3" RenderTransformOrigin="0,0" BorderThickness="1,1,8,8" CornerRadius="8" Grid.ColumnSpan="2"   >
-            <Border.RenderTransform>
-                <CompositeTransform ScaleX="1.02" ScaleY="1.02"  />
-            </Border.RenderTransform>
-        </Border>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="830"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Button x:Name="deleteNoteGroupButton" Content="&#x2716;" Foreground="White" Background="#FFAAA4A4" Click="deleteNoteGroupButtonClick" VerticalAlignment="Center"  HorizontalAlignment="Right" />
-        <TextBox x:Name="tempTextBox" HorizontalAlignment="Left" IsReadOnly="True" FontSize="16" Height="50" TextWrapping="Wrap" VerticalAlignment="Center" Width="1028"/>
+
+        <TextBox x:Name="tempTextBox" Grid.Column="0" IsReadOnly="True" FontSize="16" Height="50" TextWrapping="Wrap" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Background="#FDFDE8"/>
+        <Button x:Name="deleteNoteGroupButton" Grid.Column="1" Content="&#x2716;"  Height="50"  Foreground="White" Background="#805B94" Click="deleteNoteGroupButtonClick"   HorizontalAlignment="Left" CornerRadius="3" BorderThickness="2" BorderBrush="Black"/>
 
     </Grid>
 </UserControl>
-    

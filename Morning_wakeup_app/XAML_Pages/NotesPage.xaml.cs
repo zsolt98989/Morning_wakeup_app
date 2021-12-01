@@ -321,6 +321,8 @@ namespace Morning_wakeup_app.XAML_Pages
             // Create the new note
             NoteGroup newNoteGroup = new NoteGroup(noteBox.Text);
             _noteGroupModel.NoteGroups.Add(newNoteGroup);
+            dictatedTextBuilder.Clear();
+            noteBox.Text = "";
             return newNoteGroup;
         }
 
