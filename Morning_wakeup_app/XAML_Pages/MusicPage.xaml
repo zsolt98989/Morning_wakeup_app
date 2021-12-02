@@ -5,6 +5,7 @@
     xmlns:local="using:Morning_wakeup_app.XAML_Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lottie="using:Microsoft.Toolkit.Uwp.UI.Lottie" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
 
     <Grid>
@@ -16,10 +17,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         
-        <TextBlock x:Name="currently_playing_tb" Grid.RowSpan="1" FontSize="30" FontStyle="Italic" Grid.ColumnSpan="2" TextAlignment="Center" Margin="0,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Center" Height="150" Width="600"/>
+        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+        <muxc:AnimatedVisualPlayer Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="0,200,0,0" x:Name="ChristmasPlayer" Height="300">
+            <lottie:LottieVisualSource x:Name="ChristmasWreath" UriSource="ms-appx:///AnimatedVisuals/ch_wreath.json"/>
+        </muxc:AnimatedVisualPlayer>
+
+        <TextBlock x:Name="currently_playing_tb" Grid.RowSpan="1" FontSize="30" FontStyle="Italic" Grid.ColumnSpan="2" TextAlignment="Center" Margin="0,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Center" Height="150" Width="800"/>
 
         <Button x:Name="play_button" Grid.RowSpan="1" Grid.ColumnSpan="2" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" FontSize="50" Margin="0,100,0,0" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="play_button_Click_1"/>
         <Button x:Name="next_music_button" Grid.RowSpan="1" Grid.ColumnSpan="2"  FontFamily="Segoe MDL2 Assets" Content="&#xE893;" FontSize="50" Margin="200,100,0,0" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="next_music_button_Click"/>

@@ -28,9 +28,12 @@ namespace Morning_wakeup_app
             var serializer = new DataContractJsonSerializer(typeof(Root));
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(result));
             var data = JsonConvert.DeserializeObject<Root>(result);
-
             weather_reports = (Root)serializer.ReadObject(ms);
-            return true; //Todo: hibavizsgálat visszatérésnél, nem csak simán true-t visszaadni
+
+            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                return false;
+            else
+                return true; //Todo: hibavizsgálat visszatérésnél, nem csak simán true-t visszaadni
         }
     }
 

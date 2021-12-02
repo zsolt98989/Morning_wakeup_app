@@ -40,9 +40,8 @@ namespace Morning_wakeup_app.XAML_Pages
 
             weather_button_Click(this, new RoutedEventArgs());
         }
-        private async void Second_timer_Tick(object sender, object e)
+        private void Second_timer_Tick(object sender, object e)
         {
-            var flag = await Current_weather.GetWeatherInformations();
             if (forecast_slider.Value != 48)
                 forecast_slider.Value += 1;
             else
@@ -53,21 +52,25 @@ namespace Morning_wakeup_app.XAML_Pages
         {
             forecast_slider.Value = 1;
             var flag = await Current_weather.GetWeatherInformations();
-            var flag3 = await Weather_forecast.ConvertCityToCoordinates(weather_search_input_tb.Text);
-            Weather_forecast.lat = Weather_forecast.citys.lat;
-            Weather_forecast.lon = Weather_forecast.citys.lon;
-            var flag2 = await Weather_forecast.GetWeatherForecastInformations();
-            try
+            if (flag)
             {
-                string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Current_weather.weather_reports.weather[0].icon);
-                Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
-                fill_weather_textblock();
-                fill_forecast_textblock();
-            }
-            catch (Exception ex)
-            {
+                var flag3 = await Weather_forecast.ConvertCityToCoordinates(weather_search_input_tb.Text);
+                Weather_forecast.lat = Weather_forecast.citys.lat;
+                Weather_forecast.lon = Weather_forecast.citys.lon;
+                var flag2 = await Weather_forecast.GetWeatherForecastInformations();
+                try
+                {
+                    string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", Current_weather.weather_reports.weather[0].icon);
+                    Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
+                    fill_weather_textblock();
+                    fill_forecast_textblock();
+                }
+                catch (Exception ex)
+                {
 
+                }
             }
+           
         }
         private void weather_search_input_tb_TextChanged(object sender, TextChangedEventArgs e)
         {
