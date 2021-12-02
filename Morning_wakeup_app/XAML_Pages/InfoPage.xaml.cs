@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -33,6 +34,7 @@ namespace Morning_wakeup_app.XAML_Pages
             MainPage.Second_timer.Tick += Second_timer_Tick;
 
             MainPage.Title.Text = "Main Page";
+
         }
         private void Second_timer_Tick(object sender, object e)
         {

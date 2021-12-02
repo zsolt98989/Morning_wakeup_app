@@ -16,7 +16,6 @@ namespace Morning_wakeup_app.Classes
         public static Root2 citys;
         static public double lon;
         static public double lat;
-
         public async static Task<bool> GetWeatherForecastInformations()
         {
             var http = new HttpClient();

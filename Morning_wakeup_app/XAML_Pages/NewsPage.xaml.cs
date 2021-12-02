@@ -95,7 +95,7 @@ namespace Morning_wakeup_app.XAML_Pages
             }
             catch(Exception e)
             {
-                
+
             }
         }
     }

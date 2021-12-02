@@ -8,10 +8,18 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Image Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="2" Grid.RowSpan="2" Stretch="Fill" Source="/Assets/Images/MainPage/mainpage.jpg" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
         <!--Analog clock -->
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Ellipse Width="450" Height="450" Fill="White"></Ellipse>
             <!--Second hand -->
             <Rectangle Name="second" Margin="0,0,0,150" Stroke="RoyalBlue" Height="150" Width="1" VerticalAlignment="Center" HorizontalAlignment="Center">

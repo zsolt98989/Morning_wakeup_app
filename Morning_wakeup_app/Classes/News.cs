@@ -18,7 +18,7 @@ namespace Morning_wakeup_app
             var http = new HttpClient();
             if (search_by == "")
                 search_by = "Apple";
-            string url = String.Format("https://newsapi.org/v2/everything?q={0}&from=2021-09-21&sortBy=popularity&apiKey=98b035024d8b4c728e6433fdcf1b5ada", search_by);
+            string url = String.Format("https://newsapi.org/v2/everything?q={0}&from=2021-11-10&sortBy=popularity&apiKey=a00cf881a614443a86effb37430871e7", search_by);
             var response = await http.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
             var data = JsonConvert.DeserializeObject<NewsResponse_root>(result);
@@ -53,6 +53,4 @@ namespace Morning_wakeup_app
         public int totalResults { get; set; }
         public List<Article> articles { get; set; }
     }
-
-
 }
